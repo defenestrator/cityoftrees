@@ -11,16 +11,17 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background: linear-gradient(#378DCA, #7ec0ee);
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
                 margin: 0;
             }
 
             .full-height {
                 height: 100vh;
+                background:transparent url('public/img/forest-4143244.png') no-repeat bottom right;
+                background-size:cover;
             }
 
             .flex-center {
@@ -44,12 +45,22 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
                 font-family:'Playfair Display', serif;
+                color:white;
+                font-weight:900;
             }
 
+            .subtitle {
+
+                margin:0 auto;
+                font-family:'Playfair Display', serif;
+                font-size:24px;
+                position:absolute;
+                bottom:90px;
+            }
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -61,12 +72,28 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .bottom-center {
+                margin:0 auto;
+                position:absolute;
+                bottom: 30px;
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+
+            <div class="top-right links">
+                <a href="#">Shop</a>
+                <a href="#">Subscribe</a>
+            </div>
+            <div class="content">
+                <div class="title m-b-md">
+                    {{ config('app.name') }}
+
+                </div>
+                @if (Route::has('login'))
+                <div class="links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -79,18 +106,6 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    {{ config('app.name') }}
-                </div>
-
-                <div class="links">
-                    <a href="#">Shop</a>
-                    <a href="#">Subscribe</a>
-                    <a href="#">Why</a>
-                    <a href="#">News</a>
-                    <a href="#">Contact</a>
-                </div>
             </div>
         </div>
     </body>
