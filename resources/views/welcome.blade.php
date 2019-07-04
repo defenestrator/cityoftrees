@@ -20,7 +20,7 @@
 
             .full-height {
                 height: 100vh;
-                background:transparent url('public/img/forest-4143244.png') no-repeat bottom right;
+                background:transparent url('/img/forest-4143244.png') no-repeat bottom right;
                 background-size:cover;
             }
 
