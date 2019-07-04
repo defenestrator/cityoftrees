@@ -52,14 +52,6 @@
                 font-weight:900;
             }
 
-            .subtitle {
-
-                margin:0 auto;
-                font-family:'Playfair Display', serif;
-                font-size:24px;
-                position:absolute;
-                bottom:90px;
-            }
             .links > a {
                 color: white;
                 padding: 0 25px;
@@ -71,11 +63,10 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin: 30px 0;
             }
 
             .bottom-center {
-                margin:0 auto;
                 position:absolute;
                 bottom: 30px;
             }
@@ -87,26 +78,29 @@
             <div class="top-right links">
                 <a href="#">Shop</a>
                 <a href="#">Subscribe</a>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                @endif
             </div>
             <div class="content">
                 <div class="title m-b-md">
                     {{ config('app.name') }}<br>CBD
 
                 </div>
-                @if (Route::has('login'))
-                <div class="links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                <div class="bottom-center">
+                    <div class="links flex-center">
+
+                    </div>
+
                 </div>
-            @endif
-
             </div>
         </div>
     </body>
