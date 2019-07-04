@@ -11,7 +11,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: linear-gradient(#378DCA, #7ec0ee);
+                background: rgb(55,141,202);
+                background: linear-gradient(rgba(55,141,202,1) 0%, rgba(126,192,238,1) 30%, rgba(252,176,69,1) 100%);
                 color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
