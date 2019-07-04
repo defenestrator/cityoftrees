@@ -1,0 +1,2548 @@
+{
+    "User": {
+        "name": "User",
+        "type": "UserEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "first_name": {
+                "name": "first_name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "last_name": {
+                "name": "last_name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "screen_name": {
+                "name": "screen_name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "email": {
+                "name": "email",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "email_verified_at": {
+                "name": "email_verified_at",
+                "cast": "datetime",
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "password": {
+                "name": "password",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": true,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "remember_token": {
+                "name": "remember_token",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": true,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Profile",
+                "Vendor",
+                "Subscription",
+                "Cart",
+                "Invoice"
+            ],
+            "belongsTo": [],
+            "belongsToMany": [
+                "Role",
+                "ShippingAddress",
+                "PaymentMethodType",
+                "Coupon"
+            ]
+        }
+    },
+    "Role": {
+        "name": "Role",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": [
+                "User"
+            ]
+        }
+    },
+    "ShippingAddress": {
+        "name": "ShippingAddress",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "country": {
+                "name": "country",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "street_address": {
+                "name": "street_address",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "unit_number": {
+                "name": "unit_number",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "city": {
+                "name": "city",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "state": {
+                "name": "state",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "postal_code": {
+                "name": "postal_code",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Subscription"
+            ],
+            "belongsTo": [],
+            "belongsToMany": [
+                "User"
+            ]
+        }
+    },
+    "role_user": {
+        "name": "role_user",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "role_id": {
+                "name": "role_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "roles"
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "shipping_address_user": {
+        "name": "shipping_address_user",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "shipping_address_id": {
+                "name": "shipping_address_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "shipping_addresses"
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "password_resets": {
+        "name": "password_resets",
+        "type": "TableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "email": {
+                "name": "email",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "token": {
+                "name": "token",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Profile": {
+        "name": "Profile",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            },
+            "facebook": {
+                "name": "facebook",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "instagram": {
+                "name": "instagram",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "twitter": {
+                "name": "twitter",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "snapchat": {
+                "name": "snapchat",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "thcfarmer": {
+                "name": "thcfarmer",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "rollitup": {
+                "name": "rollitup",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "420mag": {
+                "name": "420mag",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "leafly": {
+                "name": "leafly",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "strainly": {
+                "name": "strainly",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [
+                "User"
+            ],
+            "belongsToMany": []
+        }
+    },
+    "Manufacturer": {
+        "name": "Manufacturer",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "country": {
+                "name": "country",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "street_address": {
+                "name": "street_address",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "unit_number": {
+                "name": "unit_number",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "city": {
+                "name": "city",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "state": {
+                "name": "state",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "postal_code": {
+                "name": "postal_code",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Product"
+            ],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Vendor": {
+        "name": "Vendor",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "country": {
+                "name": "country",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "street_address": {
+                "name": "street_address",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "unit_number": {
+                "name": "unit_number",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "city": {
+                "name": "city",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "state": {
+                "name": "state",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "postal_code": {
+                "name": "postal_code",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Product"
+            ],
+            "belongsTo": [
+                "User"
+            ],
+            "belongsToMany": []
+        }
+    },
+    "Product": {
+        "name": "Product",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "manufacturer_id": {
+                "name": "manufacturer_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "manufacturers"
+            },
+            "vendor_id": {
+                "name": "vendor_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "vendors"
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "description": {
+                "name": "description",
+                "cast": null,
+                "dataType": "text",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "height": {
+                "name": "height",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "width": {
+                "name": "width",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "depth": {
+                "name": "depth",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "price": {
+                "name": "price",
+                "cast": null,
+                "dataType": "decimal",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "cart_product"
+            ],
+            "belongsTo": [
+                "Manufacturer",
+                "Vendor"
+            ],
+            "belongsToMany": [
+                "Subscription",
+                "Cart",
+                "Invoice"
+            ]
+        }
+    },
+    "Subscription": {
+        "name": "Subscription",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            },
+            "shipping_address_id": {
+                "name": "shipping_address_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "shipping_addresses"
+            },
+            "frequency": {
+                "name": "frequency",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "active": {
+                "name": "active",
+                "cast": null,
+                "dataType": "boolean",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Invoice"
+            ],
+            "belongsTo": [
+                "User",
+                "ShippingAddress"
+            ],
+            "belongsToMany": [
+                "Product"
+            ]
+        }
+    },
+    "product_subscription": {
+        "name": "product_subscription",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "product_id": {
+                "name": "product_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "products"
+            },
+            "subscription_id": {
+                "name": "subscription_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "subscriptions"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Cart": {
+        "name": "Cart",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "cart_product"
+            ],
+            "belongsTo": [
+                "User"
+            ],
+            "belongsToMany": [
+                "Product"
+            ]
+        }
+    },
+    "cart_product": {
+        "name": "cart_product",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "product_id": {
+                "name": "product_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "products"
+            },
+            "cart_id": {
+                "name": "cart_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "carts"
+            },
+            "qty": {
+                "name": "qty",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [
+                "Product",
+                "Cart"
+            ],
+            "belongsToMany": []
+        }
+    },
+    "PaymentMethodType": {
+        "name": "PaymentMethodType",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "name": {
+                "name": "name",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "type": {
+                "name": "type",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "receiving_account": {
+                "name": "receiving_account",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "active": {
+                "name": "active",
+                "cast": null,
+                "dataType": "boolean",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": [
+                "User"
+            ]
+        }
+    },
+    "payment_method_type_user": {
+        "name": "payment_method_type_user",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "payment_method_type_id": {
+                "name": "payment_method_type_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "payment_method_types"
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Payment"
+            ],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Invoice": {
+        "name": "Invoice",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            },
+            "subscription_id": {
+                "name": "subscription_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "subscriptions"
+            },
+            "subtotal": {
+                "name": "subtotal",
+                "cast": null,
+                "dataType": "decimal",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "tax": {
+                "name": "tax",
+                "cast": null,
+                "dataType": "decimal",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "shipping": {
+                "name": "shipping",
+                "cast": null,
+                "dataType": "decimal",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "discount": {
+                "name": "discount",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "total": {
+                "name": "total",
+                "cast": null,
+                "dataType": "decimal",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [
+                "Order"
+            ],
+            "belongsTo": [
+                "User",
+                "Subscription"
+            ],
+            "belongsToMany": [
+                "Product",
+                "Payment"
+            ]
+        }
+    },
+    "invoice_product": {
+        "name": "invoice_product",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "qty": {
+                "name": "qty",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "invoice_id": {
+                "name": "invoice_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "invoices"
+            },
+            "product_id": {
+                "name": "product_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "products"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Coupon": {
+        "name": "Coupon",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "percentage": {
+                "name": "percentage",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "value": {
+                "name": "value",
+                "cast": null,
+                "dataType": "text",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "code": {
+                "name": "code",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "expires": {
+                "name": "expires",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": [
+                "User"
+            ]
+        }
+    },
+    "coupon_user": {
+        "name": "coupon_user",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "coupon_id": {
+                "name": "coupon_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "coupons"
+            },
+            "user_id": {
+                "name": "user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "users"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Payment": {
+        "name": "Payment",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "payment_method_type_user_id": {
+                "name": "payment_method_type_user_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "amount": {
+                "name": "amount",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [
+                "payment_method_type_user"
+            ],
+            "belongsToMany": [
+                "Invoice"
+            ]
+        }
+    },
+    "invoice_payment": {
+        "name": "invoice_payment",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "invoice_id": {
+                "name": "invoice_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "invoices"
+            },
+            "payment_id": {
+                "name": "payment_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "payments"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Order": {
+        "name": "Order",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "invoice_id": {
+                "name": "invoice_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "invoices"
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [
+                "Invoice"
+            ],
+            "belongsToMany": [
+                "Shipment"
+            ]
+        }
+    },
+    "Shipment": {
+        "name": "Shipment",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "shipping_method_id": {
+                "name": "shipping_method_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "shipped_on_date": {
+                "name": "shipped_on_date",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "received_on_date": {
+                "name": "received_on_date",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": [
+                "Order"
+            ]
+        }
+    },
+    "order_shipment": {
+        "name": "order_shipment",
+        "type": "PivotTableEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "order_id": {
+                "name": "order_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "orders"
+            },
+            "shipment_id": {
+                "name": "shipment_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": "shipments"
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    },
+    "Image": {
+        "name": "Image",
+        "type": "ModelEntity",
+        "softdeletes": false,
+        "attributes": {
+            "id": {
+                "name": "id",
+                "cast": null,
+                "dataType": "bigIncrements",
+                "fillable": false,
+                "hidden": true,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "uuid": {
+                "name": "uuid",
+                "cast": null,
+                "dataType": "string",
+                "fillable": false,
+                "hidden": false,
+                "index": true,
+                "nullable": false,
+                "unique": true,
+                "foreign": null
+            },
+            "imageable_id": {
+                "name": "imageable_id",
+                "cast": null,
+                "dataType": "unsignedBigInteger",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "imageable_type": {
+                "name": "imageable_type",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "large": {
+                "name": "large",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "medium": {
+                "name": "medium",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "small": {
+                "name": "small",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "square": {
+                "name": "square",
+                "cast": null,
+                "dataType": "integer",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "original": {
+                "name": "original",
+                "cast": null,
+                "dataType": "string",
+                "fillable": true,
+                "hidden": false,
+                "index": false,
+                "nullable": false,
+                "unique": false,
+                "foreign": null
+            },
+            "created_at": {
+                "name": "created_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            },
+            "updated_at": {
+                "name": "updated_at",
+                "cast": null,
+                "dataType": "timestamp",
+                "fillable": false,
+                "hidden": false,
+                "index": false,
+                "nullable": true,
+                "unique": false,
+                "foreign": null
+            }
+        },
+        "relationships": {
+            "hasOne": [],
+            "hasMany": [],
+            "belongsTo": [],
+            "belongsToMany": []
+        }
+    }
+}
