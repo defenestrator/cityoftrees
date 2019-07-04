@@ -54,12 +54,14 @@
 
             .links > a {
                 color: white;
-                padding: 0 25px;
+                padding: 12.5px;
                 font-size: 13px;
                 font-weight: 600;
+                line-height:2em;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                font-weight:900;
             }
 
             .m-b-md {
@@ -74,20 +76,19 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-
             <div class="top-right links">
-                <a href="#">Shop</a>
-                <a href="#">Subscribe</a>
-                @if (Route::has('login'))
+                    @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
+                        <a href="#">Shop</a>
                         <a href="{{ route('login') }}">Login</a>
                         @if (Route::has('register'))
                         <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 @endif
+
             </div>
             <div class="content">
                 <div class="title m-b-md">
