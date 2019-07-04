@@ -89,7 +89,7 @@
             </div>
             <div class="content">
                 <div class="title m-b-md">
-                    {{ config('app.name') }}
+                    {{ config('app.name') }}<br>CBD
 
                 </div>
                 @if (Route::has('login'))
