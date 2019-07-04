@@ -1,6 +1,6 @@
 <?php
 
-namespace cityoftrees\Http\Middleware;
+namespace Cot\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 

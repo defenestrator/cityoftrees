@@ -35,7 +35,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => cityoftrees\User::class,
+        'model' => Cot\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

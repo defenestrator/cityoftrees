@@ -1,6 +1,6 @@
 <?php
 
-namespace cityoftrees\Http\Middleware;
+namespace Cot\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

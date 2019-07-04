@@ -1,6 +1,6 @@
 <?php
 
-namespace cityoftrees\Providers;
+namespace Cot\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

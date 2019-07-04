@@ -1,6 +1,6 @@
 <?php
 
-namespace cityoftrees;
+namespace Cot;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

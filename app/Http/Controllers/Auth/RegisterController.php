@@ -1,9 +1,9 @@
 <?php
 
-namespace cityoftrees\Http\Controllers\Auth;
+namespace Cot\Http\Controllers\Auth;
 
-use cityoftrees\User;
-use cityoftrees\Http\Controllers\Controller;
+use Cot\User;
+use Cot\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \cityoftrees\User
+     * @return \Cot\User
      */
     protected function create(array $data)
     {

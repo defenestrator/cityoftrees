@@ -1,6 +1,6 @@
 <?php
 
-namespace cityoftrees\Providers;
+namespace Cot\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'cityoftrees\Model' => 'cityoftrees\Policies\ModelPolicy',
+        // 'Cot\Model' => 'Cot\Policies\ModelPolicy',
     ];
 
     /**

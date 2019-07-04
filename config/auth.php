@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => cityoftrees\User::class,
+            'model' => Cot\User::class,
         ],
 
         // 'users' => [

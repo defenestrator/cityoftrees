@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "cityoftrees\\": "app/"
+            "Cot\\": "app/"
         },
         "classmap": [
             "database/seeds",

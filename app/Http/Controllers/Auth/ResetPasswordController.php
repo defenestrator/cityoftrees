@@ -1,8 +1,8 @@
 <?php
 
-namespace cityoftrees\Http\Controllers\Auth;
+namespace Cot\Http\Controllers\Auth;
 
-use cityoftrees\Http\Controllers\Controller;
+use Cot\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

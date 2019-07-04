@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        cityoftrees\Providers\AppServiceProvider::class,
-        cityoftrees\Providers\AuthServiceProvider::class,
-        // cityoftrees\Providers\BroadcastServiceProvider::class,
-        cityoftrees\Providers\EventServiceProvider::class,
-        cityoftrees\Providers\RouteServiceProvider::class,
+        Cot\Providers\AppServiceProvider::class,
+        Cot\Providers\AuthServiceProvider::class,
+        // Cot\Providers\BroadcastServiceProvider::class,
+        Cot\Providers\EventServiceProvider::class,
+        Cot\Providers\RouteServiceProvider::class,
 
     ],
 
