@@ -12,7 +12,7 @@
         <style>
             html, body {
                 background: rgb(55,141,202);
-                background: linear-gradient(rgba(55,141,202,1) 0%, rgba(126,192,238,1) 30%, rgba(252,176,69,1) 100%);
+                background: linear-gradient(rgba(55,141,202,1) 0%, rgba(126,192,238,1) 30%, rgba(252,176,69,1) 60%);
                 color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -21,6 +21,11 @@
 
             .full-height {
                 height: 100vh;
+            }
+            .mask {
+                background:transparent linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.5) 100%);
+            }
+            .forest{
                 background:transparent url('/img/forest-4143244.png') no-repeat bottom right;
                 background-size:cover;
             }
@@ -75,7 +80,9 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height forest">
+            <div class="flex-center full-height mask">
+
             <div class="top-right links">
                     @if (Route::has('login'))
                     @auth
@@ -103,6 +110,7 @@
 
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>
