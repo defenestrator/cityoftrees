@@ -24,7 +24,7 @@ class ProfileResource extends JsonResource
             'snapchat' => $this->snapchat,
             'thcfarmer' => $this->thcfarmer,
             'rollitup' => $this->rollitup,
-            '420mag' => $this->420mag,
+            'four20mag' => $this->four20mag,
             'leafly' => $this->leafly,
             'strainly' => $this->strainly,
             'created_at' => $this->created_at,

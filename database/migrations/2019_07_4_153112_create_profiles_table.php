@@ -24,7 +24,7 @@ class CreateProfilesTable extends Migration
             $table->string('snapchat');
             $table->string('thcfarmer');
             $table->string('rollitup');
-            $table->string('420mag');
+            $table->string('four20mag');
             $table->string('leafly');
             $table->string('strainly');
             $table->timestamp('created_at')->nullable();

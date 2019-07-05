@@ -12,7 +12,7 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', '420mag', 'leafly', 'strainly'
+        'user_id', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
     ];
 
     /**
@@ -37,7 +37,7 @@ class Profile extends Model
         'snapchat' => 'string',
         'thcfarmer' => 'string',
         'rollitup' => 'string',
-        '420mag' => 'string',
+        'four20mag' => 'string',
         'leafly' => 'string',
         'strainly' => 'string',
         'created_at' => 'timestamp',

@@ -11,8 +11,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: rgb(55,141,202);
-                background: linear-gradient(rgba(55,141,202,1) 0%, rgba(126,192,238,1) 30%, rgba(252,176,69,1) 60%);
+                background: white;
                 color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -22,12 +21,21 @@
             .full-height {
                 height: 100vh;
             }
+
+            .twenty-vh {
+                height:20vh;
+            }
+
+            .sunset {
+                background: linear-gradient(rgba(55,141,202,1) 0%, rgba(126,192,238,1) 25%, rgba(252,176,69,1) 50% , #ff8739 75%);
+            }
             .mask {
                 background:transparent linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0.5) 100%);
             }
             .forest{
-                background:transparent url('/img/forest-4143244.png') no-repeat bottom right;
+                background:transparent url('/img/forest.png') no-repeat bottom right;
                 background-size:cover;
+                background-position-x:bottom;
             }
 
             .flex-center {
@@ -36,6 +44,11 @@
                 justify-content: center;
             }
 
+            .flex-top {
+                align-items: top;
+                display: flex;
+                justify-content: center;
+            }
             .position-ref {
                 position: relative;
             }
@@ -80,9 +93,9 @@
         </style>
     </head>
     <body>
-        <div class="position-ref full-height forest">
+        <div class="position-ref full-height sunset">
+            <div class="full-height forest">
             <div class="flex-center full-height mask">
-
             <div class="top-right links">
                     @if (Route::has('login'))
                     @auth
@@ -100,17 +113,20 @@
             <div class="content">
                 <div class="title m-b-md">
                     {{ config('app.name') }}<br>CBD
-
-                </div>
-
-                <div class="bottom-center">
-                    <div class="links flex-center">
-
-                    </div>
-
                 </div>
             </div>
         </div>
         </div>
+        {{-- <div class="position-ref flex-top twenty-vh" style="background-color:white; color:#0f0f0f;">
+            <div class="content">
+                <h2 style="">CBD for your health</h2>
+            </div>
+        </div>
+        <div class="position-ref full-height flex-top" style="background-color:#0f0f0f; color:#fff;">
+                <div class="content">
+                    <h2 style="">Dr. Thomas Wiggins M.D.</h2>
+                </div>
+            </div> --}}
+    </div>
     </body>
 </html>

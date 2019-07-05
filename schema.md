@@ -38,7 +38,7 @@ twitter
 snapchat
 thcfarmer
 rollitup
-420mag
+four20mag
 leafly
 strainly
 

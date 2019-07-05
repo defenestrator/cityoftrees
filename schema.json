@@ -649,8 +649,8 @@
                 "unique": false,
                 "foreign": null
             },
-            "420mag": {
-                "name": "420mag",
+            "four20mag": {
+                "name": "four20mag",
                 "cast": null,
                 "dataType": "string",
                 "fillable": true,

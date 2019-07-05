@@ -27,7 +27,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'snapchat' => $faker->sentence(),
         'thcfarmer' => $faker->sentence(),
         'rollitup' => $faker->sentence(),
-        '420mag' => $faker->sentence(),
+        'four20mag' => $faker->sentence(),
         'leafly' => $faker->sentence(),
         'strainly' => $faker->sentence()
     ];
