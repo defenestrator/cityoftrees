@@ -23,11 +23,11 @@
         }
 
         .full-height {
-            height: 80vh;
+            height: 85vh;
         }
 
         .twenty-vh {
-            height: 20vh;
+            height: 25vh;
         }
 
         .sunset {
@@ -126,9 +126,9 @@
                     </div>
                 </div>
             </div>
-            <div class="position-ref twenty-vh flex-top" style="padding:48px 0; background-color:#353839; color:#fff;">
+            <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
                 <div class="content">
-                    <h2 style="">Designed in cooperation with Dr. Thomas Wiggins M.D.</h2>
+                    <h2 style="line-height:1.5em;">In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
                     <h3>Grand Opening &mdash; Summer 2019</h3>
                 </div>
             </div>
