@@ -27,8 +27,8 @@
         }
 
         h2 {
-            line-height:1.5rem;
-            letter-spacing:0.2rem;
+            line-height:1.5em;
+            letter-spacing:0.15rem;
             font-weight:400;
         }
 
