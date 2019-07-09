@@ -129,7 +129,6 @@
             <div class="position-ref twenty-vh flex-top" style="background-color:#555555; color:#fff;">
                 <div class="content">
                     <h2 style="line-height:1.5em;">In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
-                    <p style="color:white;">Grand Opening &mdash; Summer 2019</p>
                 </div>
             </div>
             <div class="position-ref twenty-vh flex-top" style="background-color:#555555; color:#fff;">
