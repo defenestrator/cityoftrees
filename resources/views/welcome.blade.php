@@ -135,11 +135,11 @@
                     </div>
                 </div>
             </div>
-            <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
+            {{-- <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
                 <div class="content">
                     <h2>In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
                 </div>
-            </div>
+            </div> --}}
             <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
                 <div class="content">
                     <h3>Grand Opening &mdash; Summer 2019</h3>
