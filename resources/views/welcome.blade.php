@@ -15,8 +15,8 @@
     <style>
         html,
         body {
-            background: white;
-            color: #353939;
+            /* background-color: #87ceeb; */
+            color: #555555;
             font-family: 'Josefin Sans', sans-serif;
             font-weight: 100;
             margin: 0;
@@ -31,15 +31,15 @@
         }
 
         .sunset {
-            background: #ffffff;
+            background: transparent linear-gradient(#87ceeb, #f0ffff 25%, rgba(240,255,255, 1) 50%, rgba(255, 255, 255, 1) 75%);
         }
 
         .mask {
-            background: transparent linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.0) 50%, rgba(255, 255, 255, 0.9) 100%);
+            background: transparent linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.697) 50%, rgba(255, 255, 255, 0.9) 100%);
         }
 
         .forest {
-            background: transparent url('/img/forest-honeydew.png') no-repeat top right;
+            background: transparent url('/img/forest-yellow.png') no-repeat top right;
             background-size: cover;
             background-position-x: bottom;
         }
@@ -73,12 +73,12 @@
         .title {
             font-size: 64px;
             font-family: 'Playfair Display', serif;
-            color: #353839;
+            color: #555555;
             font-weight: 900;
         }
 
         .links>a {
-            color: #353839;
+            color: #555555;
             padding: 12.5px;
             font-size: 13px;
             font-weight: 600;
@@ -126,10 +126,15 @@
                     </div>
                 </div>
             </div>
-            <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
+            <div class="position-ref twenty-vh flex-top" style="background-color:#555555; color:#fff;">
                 <div class="content">
                     <h2 style="line-height:1.5em;">In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
-                    <h3>Grand Opening &mdash; Summer 2019</h3>
+                    <p style="color:white;">Grand Opening &mdash; Summer 2019</p>
+                </div>
+            </div>
+            <div class="position-ref twenty-vh flex-top" style="background-color:#555555; color:#fff;">
+                <div class="content">
+                    <p>Grand Opening &mdash; Summer 2019</p>
                 </div>
             </div>
         </div>
