@@ -39,7 +39,7 @@
         }
 
         .forest {
-            background: transparent url('/img/forest-honeydew.png') no-repeat bottom right;
+            background: transparent url('/img/forest-honeydew.png') no-repeat top right;
             background-size: cover;
             background-position-x: bottom;
         }
