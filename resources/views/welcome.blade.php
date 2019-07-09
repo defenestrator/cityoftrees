@@ -35,9 +35,10 @@
         } */
 
         .forest {
+            width:100%;
             background: transparent url('/img/forest-honeydew.png') no-repeat top right;
             background-size: cover;
-            background-position-x: bottom;
+            background-position: fixed;
         }
 
         .flex-center {
@@ -100,8 +101,7 @@
 </head>
 
 <body>
-    <div class="position-ref full-height sunset">
-        <div class="full-height forest">
+    <div class="position-ref full-height forest">
             <div class="flex-center full-height mask">
                 <div class="top-right links">
                     @if (Route::has('login'))
@@ -128,7 +128,6 @@
                     <h3>Grand Opening &mdash; Summer 2019</h3>
                 </div>
             </div>
-        </div>
     </div>
 </body>
 
