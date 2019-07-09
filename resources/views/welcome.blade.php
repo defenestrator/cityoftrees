@@ -38,7 +38,6 @@
             width:100%;
             background: transparent url('/img/forest-honeydew.png') no-repeat top right;
             background-size: cover;
-            background-position: fixed;
         }
 
         .flex-center {
