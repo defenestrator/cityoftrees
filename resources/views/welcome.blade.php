@@ -22,6 +22,20 @@
             margin: 0;
         }
 
+        h1 {
+            font-weight:900;
+        }
+
+        h2 {
+            line-height:1.5rem;
+            letter-spacing:0.2rem;
+            font-weight:400;
+        }
+
+        h3 {
+            font-weight:100;
+        }
+
         .full-height {
             height: 85vh;
         }
@@ -82,7 +96,7 @@
             letter-spacing: .1rem;
             text-decoration: none;
             text-transform: uppercase;
-            font-weight: 900;
+            font-weight: 400;
         }
 
         .m-b-md {
@@ -123,7 +137,11 @@
             </div>
             <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
                 <div class="content">
-                    <h2 style="line-height:1.5em;">In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
+                    <h2>In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
+                </div>
+            </div>
+            <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
+                <div class="content">
                     <h3>Grand Opening &mdash; Summer 2019</h3>
                 </div>
             </div>
