@@ -30,7 +30,7 @@ class Coupon extends Model
      * @var array
      */
     protected $casts = [
-        'percentage' => 'integer',
+        'percentage' => 'boolean',
         'code' => 'string',
         'expires' => 'timestamp',
         'created_at' => 'timestamp',

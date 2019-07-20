@@ -31,7 +31,6 @@ class Invoice extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-        'discount' => 'integer',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];

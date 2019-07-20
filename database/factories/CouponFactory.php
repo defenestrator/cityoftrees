@@ -19,8 +19,8 @@ use Carbon\Carbon;
 
 $factory->define(Coupon::class, function (Faker $faker) {
     return [
-        'percentage' => random_int(-2147483648, 2147483647),
-        'value' => $faker->realText(),
+        'percentage' => $faker->boolean(),
+        'value' => random_int(0, 4294967295),
         'code' => $faker->sentence(),
         'expires' => $faker->dateTimeBetween('-30 years', 'now')
     ];

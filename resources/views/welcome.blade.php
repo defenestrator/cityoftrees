@@ -115,36 +115,36 @@
 
 <body>
     <div class="position-ref full-height forest">
-            <div class="flex-center full-height mask">
-                <div class="top-right links">
-                    @if (Route::has('login'))
-                    @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                    @else
-                    <a href="#">Shop</a>
-                    <a href="{{ route('login') }}">Login</a>
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
-                    @endif
-                </div>
-                <div class="content">
-                    <div class="title m-b-md">
-                        {{ config('app.name') }}<br>CBD
-                    </div>
+        <div class="flex-center full-height mask">
+            <div class="top-right links">
+                @if (Route::has('login'))
+                @auth
+                <a href="{{ url('/home') }}">Home</a>
+                @else
+                <a href="#">Shop</a>
+                <a href="{{ route('login') }}">Login</a>
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}">Register</a>
+                @endif
+                @endauth
+                @endif
+            </div>
+            <div class="content">
+                <div class="title m-b-md">
+                    {{ config('app.name') }}<br>CBD
                 </div>
             </div>
-            {{-- <div class="position-ref twenty-vh flex-top" style="background-color:#353839; color:#fff;">
-                <div class="content">
-                    <h2>In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
-                </div>
-            </div> --}}
-            <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
-                <div class="content">
-                    <h3>Grand Opening &mdash; Summer 2019</h3>
-                </div>
+        </div>
+        <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
+            <div class="content">
+                <h2>In cooperation with <br>Dr. Thomas Wiggins M.D.</h2>
             </div>
+        </div>
+        <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
+            <div class="content">
+                <h3>Grand Opening &mdash; Summer 2019</h3>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -1073,7 +1073,7 @@
             "height": {
                 "name": "height",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1084,7 +1084,7 @@
             "width": {
                 "name": "width",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1095,7 +1095,7 @@
             "depth": {
                 "name": "depth",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1106,7 +1106,7 @@
             "price": {
                 "name": "price",
                 "cast": null,
-                "dataType": "decimal",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1444,7 +1444,7 @@
             "qty": {
                 "name": "qty",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1710,7 +1710,7 @@
             "subtotal": {
                 "name": "subtotal",
                 "cast": null,
-                "dataType": "decimal",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1721,7 +1721,7 @@
             "tax": {
                 "name": "tax",
                 "cast": null,
-                "dataType": "decimal",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1732,7 +1732,7 @@
             "shipping": {
                 "name": "shipping",
                 "cast": null,
-                "dataType": "decimal",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1743,7 +1743,7 @@
             "discount": {
                 "name": "discount",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1754,7 +1754,7 @@
             "total": {
                 "name": "total",
                 "cast": null,
-                "dataType": "decimal",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1819,7 +1819,7 @@
             "qty": {
                 "name": "qty",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1898,7 +1898,7 @@
             "percentage": {
                 "name": "percentage",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "boolean",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -1909,7 +1909,7 @@
             "value": {
                 "name": "value",
                 "cast": null,
-                "dataType": "text",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -2069,7 +2069,7 @@
             "amount": {
                 "name": "amount",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "unsignedInteger",
                 "fillable": true,
                 "hidden": false,
                 "index": false,
@@ -2101,11 +2101,11 @@
             }
         },
         "relationships": {
-            "hasOne": [],
-            "hasMany": [],
-            "belongsTo": [
+            "hasOne": [
                 "payment_method_type_user"
             ],
+            "hasMany": [],
+            "belongsTo": [],
             "belongsToMany": [
                 "Invoice"
             ]
@@ -2496,7 +2496,7 @@
             "square": {
                 "name": "square",
                 "cast": null,
-                "dataType": "integer",
+                "dataType": "string",
                 "fillable": true,
                 "hidden": false,
                 "index": false,

@@ -32,9 +32,6 @@ class Product extends Model
     protected $casts = [
         'uuid' => 'string',
         'name' => 'string',
-        'height' => 'integer',
-        'width' => 'integer',
-        'depth' => 'integer',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];

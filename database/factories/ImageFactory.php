@@ -25,7 +25,7 @@ $factory->define(Image::class, function (Faker $faker) {
         'large' => $faker->sentence(),
         'medium' => $faker->sentence(),
         'small' => $faker->sentence(),
-        'square' => random_int(-2147483648, 2147483647),
+        'square' => $faker->sentence(),
         'original' => $faker->sentence()
     ];
 });

@@ -20,8 +20,7 @@ class PaymentResource extends JsonResource
             'amount' => $this->amount,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'invoices' => InvoiceResource::collection($this->whenLoaded('invoices')),
-            'payment_method_type_user' => new PaymentMethodTypeUserResource($this->whenLoaded('payment_method_type_user'))
+            'invoices' => InvoiceResource::collection($this->whenLoaded('invoices'))
         ];
     }
 }

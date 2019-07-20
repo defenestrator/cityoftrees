@@ -35,7 +35,7 @@ class Image extends Model
         'large' => 'string',
         'medium' => 'string',
         'small' => 'string',
-        'square' => 'integer',
+        'square' => 'string',
         'original' => 'string',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'

@@ -22,10 +22,10 @@ $factory->define(Invoice::class, function (Faker $faker) {
         'uuid' => $faker->sentence(),
         'user_id' => random_int(1, 10),
         'subscription_id' => random_int(1, 10),
-        'subtotal' => $faker->randomFloat(),
-        'tax' => $faker->randomFloat(),
-        'shipping' => $faker->randomFloat(),
-        'discount' => random_int(-2147483648, 2147483647),
-        'total' => $faker->randomFloat()
+        'subtotal' => random_int(0, 4294967295),
+        'tax' => random_int(0, 4294967295),
+        'shipping' => random_int(0, 4294967295),
+        'discount' => random_int(0, 4294967295),
+        'total' => random_int(0, 4294967295)
     ];
 });

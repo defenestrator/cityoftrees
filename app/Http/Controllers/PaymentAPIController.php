@@ -15,7 +15,7 @@ class PaymentAPIController extends Controller
  
     public function show(Payment $payment)
     {
-        return new PaymentResource($payment->load(['paymentMethodTypeUser', 'invoices']));
+        return new PaymentResource($payment->load(['invoices']));
     }
 
     public function store(Request $request)

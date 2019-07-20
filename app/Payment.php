@@ -30,7 +30,6 @@ class Payment extends Model
      * @var array
      */
     protected $casts = [
-        'amount' => 'integer',
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp'
     ];
@@ -40,7 +39,7 @@ class Payment extends Model
      */
     public function paymentMethodTypeUser()
     {
-        return $this->belongsTo(\App\payment_method_type_user::class);
+        return $this->hasOne(\App\payment_method_type_user::class);
     }
 
 
