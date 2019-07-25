@@ -15,7 +15,7 @@ class ShippingAddressAPIController extends Controller
  
     public function show(ShippingAddress $shippingAddress)
     {
-        return new ShippingAddressResource($shippingAddress->load(['subscriptions', 'users']));
+        return new ShippingAddressResource($shippingAddress->load(['subscriptions', 'user']));
     }
 
     public function store(Request $request)

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShippingAddressUserTable extends Migration
+class CreateSubscriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateShippingAddressUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('shipping_address_user', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id')->index()->unique();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->string('uuid')->index()->unique();
             $table->unsignedBigInteger('shipping_address_id')->nullable();
             $table->foreign('shipping_address_id')->references('id')->on('shipping_addresses');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('frequency');
+            $table->boolean('active');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -31,6 +32,6 @@ class CreateShippingAddressUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipping_address_user');
+        Schema::dropIfExists('subscriptions');
     }
 }

@@ -15,7 +15,7 @@ class InvoiceAPIController extends Controller
  
     public function show(Invoice $invoice)
     {
-        return new InvoiceResource($invoice->load(['orders', 'user', 'subscription', 'products', 'payments']));
+        return new InvoiceResource($invoice->load(['user', 'products', 'payments', 'subscriptions']));
     }
 
     public function store(Request $request)

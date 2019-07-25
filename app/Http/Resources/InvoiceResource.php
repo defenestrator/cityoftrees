@@ -18,7 +18,6 @@ class InvoiceResource extends JsonResource
             'id' => $this->id,
             'uuid' => $this->uuid,
             'user_id' => $this->user_id,
-            'subscription_id' => $this->subscription_id,
             'subtotal' => $this->subtotal,
             'tax' => $this->tax,
             'shipping' => $this->shipping,
@@ -26,11 +25,10 @@ class InvoiceResource extends JsonResource
             'total' => $this->total,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'orders' => OrderResource::collection($this->whenLoaded('orders')),
             'products' => ProductResource::collection($this->whenLoaded('products')),
             'payments' => PaymentResource::collection($this->whenLoaded('payments')),
-            'user' => new UserResource($this->whenLoaded('user')),
-            'subscription' => new SubscriptionResource($this->whenLoaded('subscription'))
+            'subscriptions' => SubscriptionResource::collection($this->whenLoaded('subscriptions')),
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
 }

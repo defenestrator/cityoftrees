@@ -15,7 +15,7 @@ class SubscriptionAPIController extends Controller
  
     public function show(Subscription $subscription)
     {
-        return new SubscriptionResource($subscription->load(['invoices', 'user', 'shippingAddress', 'products']));
+        return new SubscriptionResource($subscription->load(['shippingAddress', 'products', 'invoices']));
     }
 
     public function store(Request $request)

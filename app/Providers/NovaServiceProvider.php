@@ -19,6 +19,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
     }
 
+    protected function resources()
+    {
+        Nova::resourcesIn(app_path('Nova'));
+    }
+
     /**
      * Register the Nova routes.
      *

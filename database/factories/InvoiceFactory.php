@@ -21,7 +21,6 @@ $factory->define(Invoice::class, function (Faker $faker) {
     return [
         'uuid' => $faker->sentence(),
         'user_id' => random_int(1, 10),
-        'subscription_id' => random_int(1, 10),
         'subtotal' => random_int(0, 4294967295),
         'tax' => random_int(0, 4294967295),
         'shipping' => random_int(0, 4294967295),

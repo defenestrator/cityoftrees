@@ -17,6 +17,7 @@ class ShippingAddressResource extends JsonResource
         return [
             'id' => $this->id,
             'uuid' => $this->uuid,
+            'user_id' => $this->user_id,
             'name' => $this->name,
             'country' => $this->country,
             'street_address' => $this->street_address,
@@ -27,7 +28,7 @@ class ShippingAddressResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'subscriptions' => SubscriptionResource::collection($this->whenLoaded('subscriptions')),
-            'users' => UserResource::collection($this->whenLoaded('users'))
+            'user' => new UserResource($this->whenLoaded('user'))
         ];
     }
 }

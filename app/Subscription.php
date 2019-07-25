@@ -12,7 +12,7 @@ class Subscription extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'shipping_address_id', 'frequency', 'active'
+        'shipping_address_id', 'frequency', 'active'
     ];
 
     /**
@@ -38,24 +38,6 @@ class Subscription extends Model
     ];
 
     /**
-     * Get the Invoices for the Subscription.
-     */
-    public function invoices()
-    {
-        return $this->hasMany(\App\Invoice::class);
-    }
-
-
-    /**
-     * Get the User for the Subscription.
-     */
-    public function user()
-    {
-        return $this->belongsTo(\App\User::class);
-    }
-
-
-    /**
      * Get the ShippingAddress for the Subscription.
      */
     public function shippingAddress()
@@ -70,6 +52,14 @@ class Subscription extends Model
     public function products()
     {
         return $this->belongsToMany(\App\Product::class);
+    }
+
+    /**
+     * Get the Invoices for the Subscription.
+     */
+    public function invoices()
+    {
+        return $this->belongsToMany(\App\Invoice::class);
     }
 
 }

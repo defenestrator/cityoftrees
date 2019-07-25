@@ -12,7 +12,7 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
+        'user_id', 'avatar', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
     ];
 
     /**
@@ -31,6 +31,7 @@ class Profile extends Model
      */
     protected $casts = [
         'uuid' => 'string',
+        'avatar' => 'string',
         'facebook' => 'string',
         'instagram' => 'string',
         'twitter' => 'string',

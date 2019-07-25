@@ -5,26 +5,23 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\BelongsTo;
 
-class Role extends Resource
+class Profile extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Role';
+    public static $model = 'App\Profile';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
-
-    public static $subtitle = 'id';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -32,7 +29,7 @@ class Role extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'id',
     ];
 
     /**
@@ -45,12 +42,8 @@ class Role extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name')->sortable(),
 
-            BelongsToMany::make('Users')->fields(function() {
-                return [
-                ];
-            }),
+            BelongsTo::make('User'),
         ];
     }
 

@@ -12,7 +12,7 @@ class Invoice extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'subscription_id', 'subtotal', 'tax', 'shipping', 'discount', 'total'
+        'user_id', 'subtotal', 'tax', 'shipping', 'discount', 'total'
     ];
 
     /**
@@ -36,29 +36,11 @@ class Invoice extends Model
     ];
 
     /**
-     * Get the Orders for the Invoice.
-     */
-    public function orders()
-    {
-        return $this->hasMany(\App\Order::class);
-    }
-
-
-    /**
      * Get the User for the Invoice.
      */
     public function user()
     {
         return $this->belongsTo(\App\User::class);
-    }
-
-
-    /**
-     * Get the Subscription for the Invoice.
-     */
-    public function subscription()
-    {
-        return $this->belongsTo(\App\Subscription::class);
     }
 
 
@@ -76,6 +58,14 @@ class Invoice extends Model
     public function payments()
     {
         return $this->belongsToMany(\App\Payment::class);
+    }
+
+    /**
+     * Get the Subscriptions for the Invoice.
+     */
+    public function subscriptions()
+    {
+        return $this->belongsToMany(\App\Subscription::class);
     }
 
 }

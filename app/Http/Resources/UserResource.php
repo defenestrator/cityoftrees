@@ -24,13 +24,13 @@ class UserResource extends JsonResource
             'email_verified_at' => $this->email_verified_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'profiles' => ProfileResource::collection($this->whenLoaded('profiles')),
             'vendors' => VendorResource::collection($this->whenLoaded('vendors')),
             'subscriptions' => SubscriptionResource::collection($this->whenLoaded('subscriptions')),
             'carts' => CartResource::collection($this->whenLoaded('carts')),
             'invoices' => InvoiceResource::collection($this->whenLoaded('invoices')),
-            'roles' => RoleResource::collection($this->whenLoaded('roles')),
             'shipping_addresses' => ShippingAddressResource::collection($this->whenLoaded('shipping_addresses')),
+            'orders' => OrderResource::collection($this->whenLoaded('orders')),
+            'roles' => RoleResource::collection($this->whenLoaded('roles')),
             'payment_method_types' => PaymentMethodTypeResource::collection($this->whenLoaded('payment_method_types')),
             'coupons' => CouponResource::collection($this->whenLoaded('coupons'))
         ];

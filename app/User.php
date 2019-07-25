@@ -5,11 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Traits\HasUuid;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable
 {
-    use Notifiable, HasUuid;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -48,11 +47,11 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
-     * Get the Profiles for the User.
+     * Get the Profile for the User.
      */
-    public function profiles()
+    public function profile()
     {
-        return $this->hasMany(\App\Profile::class);
+        return $this->hasOne(\App\Profile::class);
     }
 
 
@@ -93,19 +92,29 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
     /**
+     * Get the ShippingAddresses for the User.
+     */
+    public function shippingAddresses()
+    {
+        return $this->hasMany(\App\ShippingAddress::class);
+    }
+
+
+    /**
+     * Get the Orders for the User.
+     */
+    public function orders()
+    {
+        return $this->hasMany(\App\Order::class);
+    }
+
+
+    /**
      * Get the Roles for the User.
      */
     public function roles()
     {
         return $this->belongsToMany(\App\Role::class);
-    }
-
-    /**
-     * Get the ShippingAddresses for the User.
-     */
-    public function shippingAddresses()
-    {
-        return $this->belongsToMany(\App\ShippingAddress::class);
     }
 
     /**

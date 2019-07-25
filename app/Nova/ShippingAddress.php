@@ -5,6 +5,8 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\BelongsTo;
+
 
 class ShippingAddress extends Resource
 {
@@ -28,7 +30,7 @@ class ShippingAddress extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'uuid', 'name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code',
     ];
 
     /**
@@ -41,6 +43,8 @@ class ShippingAddress extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            BelongsTo::make('User'),
         ];
     }
 

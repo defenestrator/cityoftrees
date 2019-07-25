@@ -12,7 +12,7 @@ class ShippingAddress extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code'
+        'user_id', 'name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code'
     ];
 
     /**
@@ -52,11 +52,11 @@ class ShippingAddress extends Model
 
 
     /**
-     * Get the Users for the ShippingAddress.
+     * Get the User for the ShippingAddress.
      */
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(\App\User::class);
+        return $this->belongsTo(\App\User::class);
     }
 
 }

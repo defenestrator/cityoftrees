@@ -21,6 +21,7 @@ $factory->define(Profile::class, function (Faker $faker) {
     return [
         'uuid' => $faker->sentence(),
         'user_id' => random_int(1, 10),
+        'avatar' => $faker->sentence(),
         'facebook' => $faker->sentence(),
         'instagram' => $faker->sentence(),
         'twitter' => $faker->sentence(),

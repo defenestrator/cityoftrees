@@ -15,7 +15,7 @@ class UserAPIController extends Controller
  
     public function show(User $user)
     {
-        return new UserResource($user->load(['profiles', 'vendors', 'subscriptions', 'carts', 'invoices', 'roles', 'shippingAddresses', 'paymentMethodTypes', 'coupons']));
+        return new UserResource($user->load(['vendors', 'subscriptions', 'carts', 'invoices', 'shippingAddresses', 'orders', 'roles', 'paymentMethodTypes', 'coupons']));
     }
 
     public function store(Request $request)

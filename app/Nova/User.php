@@ -5,11 +5,14 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\HasOne;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsToMany;
 
 class User extends Resource
 {
+
     /**
      * The model the resource corresponds to.
      *
@@ -42,9 +45,17 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
 
-            Gravatar::make(),
+            HasOne::make('Profile'),
+
+            HasMany::make('ShippingAddresses'),
+
+            BelongsToMany::make('Roles')->fields(function() {
+                return [
+                ];
+            }),
+
+            ID::make()->sortable(),
 
             Text::make('Screen Name')
                 ->sortable()
@@ -52,7 +63,7 @@ class User extends Resource
 
             Text::make('First Name')
                 ->sortable()
-                ->rules('required', 'min:2', 'max:255'),
+                ->rules('required', 'min:1', 'max:255'),
 
             Text::make('Last Name')
                 ->sortable()

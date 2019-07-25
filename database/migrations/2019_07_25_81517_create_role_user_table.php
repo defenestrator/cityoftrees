@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInvoicePaymentTable extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateInvoicePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_payment', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->bigIncrements('id')->index()->unique();
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->unsignedBigInteger('invoice_id')->nullable();
-            $table->foreign('invoice_id')->references('id')->on('invoices');
-            $table->unsignedBigInteger('payment_id')->nullable();
-            $table->foreign('payment_id')->references('id')->on('payments');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateInvoicePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_payment');
+        Schema::dropIfExists('role_user');
     }
 }

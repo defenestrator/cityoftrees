@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShippingAddressesTable extends Migration
+class CreateInvoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateShippingAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('shipping_addresses', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id')->index()->unique();
             $table->string('uuid')->index()->unique();
-            $table->string('name');
-            $table->string('country');
-            $table->string('street_address');
-            $table->string('unit_number');
-            $table->string('city');
-            $table->string('state');
-            $table->string('postal_code');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('subtotal');
+            $table->unsignedInteger('tax');
+            $table->unsignedInteger('shipping');
+            $table->unsignedInteger('discount');
+            $table->unsignedInteger('total');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
@@ -35,6 +35,6 @@ class CreateShippingAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipping_addresses');
+        Schema::dropIfExists('invoices');
     }
 }
