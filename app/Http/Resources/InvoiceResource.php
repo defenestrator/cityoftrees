@@ -25,9 +25,9 @@ class InvoiceResource extends JsonResource
             'total' => $this->total,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'products' => ProductResource::collection($this->whenLoaded('products')),
-            'payments' => PaymentResource::collection($this->whenLoaded('payments')),
-            'subscriptions' => SubscriptionResource::collection($this->whenLoaded('subscriptions')),
+            'products' => new ProductCollection($this->whenLoaded('products')),
+            'payments' => new PaymentCollection($this->whenLoaded('payments')),
+            'subscriptions' => new SubscriptionCollection($this->whenLoaded('subscriptions')),
             'user' => new UserResource($this->whenLoaded('user'))
         ];
     }

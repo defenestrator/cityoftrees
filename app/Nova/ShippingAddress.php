@@ -5,8 +5,10 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Place;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\BelongsTo;
-
 
 class ShippingAddress extends Resource
 {
@@ -22,7 +24,7 @@ class ShippingAddress extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'street_address';
 
     /**
      * The columns that should be searched.
@@ -30,7 +32,7 @@ class ShippingAddress extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'uuid', 'name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code',
+        'id', 'uuid', 'ship_to_name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code',
     ];
 
     /**
@@ -43,9 +45,30 @@ class ShippingAddress extends Resource
     {
         return [
             ID::make()->sortable(),
+            BelongsTo::make('User')->sortable(),
+            Text::make('Ship To Name')->sortable(),
+            $this->addressFields(),
 
-            BelongsTo::make('User'),
         ];
+    }
+
+    /**
+     * Get the address fields for the resource.
+     *
+     * @return \Illuminate\Http\Resources\MergeValue
+     */
+    protected function addressFields()
+    {
+        return $this->merge([
+            Place::make('Street Address'),
+            Text::make('Unit Number')->hideFromIndex(),
+            Text::make('City')->hideFromIndex(),
+            Text::make('State')->hideFromIndex(),
+            Text::make('Postal Code')->hideFromIndex(),
+            Country::make('Country')->hideFromIndex(),
+            Text::make('Latitude', 'lat')->hideFromIndex(),
+            Text::make('Longitude', 'lat')->hideFromIndex(),
+        ]);
     }
 
     /**

@@ -22,8 +22,8 @@ class SubscriptionResource extends JsonResource
             'active' => $this->active,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'products' => ProductResource::collection($this->whenLoaded('products')),
-            'invoices' => InvoiceResource::collection($this->whenLoaded('invoices')),
+            'products' => new ProductCollection($this->whenLoaded('products')),
+            'invoices' => new InvoiceCollection($this->whenLoaded('invoices')),
             'shipping_address' => new ShippingAddressResource($this->whenLoaded('shipping_address'))
         ];
     }

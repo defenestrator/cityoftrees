@@ -3,16 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class Profile extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'avatar', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
+        'user_id', 'image_id', 'screen_name', 'title', 'first_name', 'last_name', 'phone', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
     ];
 
     /**
@@ -31,7 +34,11 @@ class Profile extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-        'avatar' => 'string',
+        'screen_name' => 'string',
+        'title' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'phone' => 'string',
         'facebook' => 'string',
         'instagram' => 'string',
         'twitter' => 'string',
@@ -41,8 +48,8 @@ class Profile extends Model
         'four20mag' => 'string',
         'leafly' => 'string',
         'strainly' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**

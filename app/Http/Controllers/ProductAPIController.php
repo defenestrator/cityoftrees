@@ -15,7 +15,7 @@ class ProductAPIController extends Controller
  
     public function show(Product $product)
     {
-        return new ProductResource($product->load(['cartProducts', 'manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
+        return new ProductResource($product->load(['manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
     }
 
     public function store(Request $request)

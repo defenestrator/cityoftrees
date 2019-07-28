@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Coupon extends Model
 {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,8 +34,8 @@ class Coupon extends Model
         'percentage' => 'boolean',
         'code' => 'string',
         'expires' => 'timestamp',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**

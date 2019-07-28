@@ -22,11 +22,15 @@ $factory->define(Vendor::class, function (Faker $faker) {
         'uuid' => $faker->sentence(),
         'user_id' => random_int(1, 10),
         'name' => $faker->name(),
+        'phone' => $faker->sentence(),
+        'contact_email' => $faker->sentence(),
         'country' => $faker->sentence(),
         'street_address' => $faker->sentence(),
         'unit_number' => $faker->sentence(),
         'city' => $faker->sentence(),
         'state' => $faker->sentence(),
-        'postal_code' => $faker->sentence()
+        'postal_code' => $faker->sentence(),
+        'lat' => $faker->latitude(),
+        'lng' => $faker->longitude()
     ];
 });

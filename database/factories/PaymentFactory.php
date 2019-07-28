@@ -19,7 +19,8 @@ use Carbon\Carbon;
 
 $factory->define(Payment::class, function (Faker $faker) {
     return [
-        'payment_method_type_user_id' => random_int(0, 9223372036854775807),
+        'uuid' => $faker->sentence(),
+        'payment_method_id' => random_int(1, 10),
         'amount' => random_int(0, 4294967295)
     ];
 });

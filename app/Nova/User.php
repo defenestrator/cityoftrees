@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasMany;
+
+use Laravel\Nova\Fields\PasswordConfirmation;
+
 
 class User extends Resource
 {
-
     /**
      * The model the resource corresponds to.
      *
@@ -33,7 +35,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'screen_name', 'first_name', 'last_name', 'email',
+        'id', 'email'
     ];
 
     /**
@@ -45,29 +47,7 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-
-            HasOne::make('Profile'),
-
-            HasMany::make('ShippingAddresses'),
-
-            BelongsToMany::make('Roles')->fields(function() {
-                return [
-                ];
-            }),
-
             ID::make()->sortable(),
-
-            Text::make('Screen Name')
-                ->sortable()
-                ->rules('required', 'min:2', 'max:255'),
-
-            Text::make('First Name')
-                ->sortable()
-                ->rules('required', 'min:1', 'max:255'),
-
-            Text::make('Last Name')
-                ->sortable()
-                ->rules('required', 'min:2', 'max:255'),
 
             Text::make('Email')
                 ->sortable()
@@ -79,6 +59,15 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
+
+            PasswordConfirmation::make('Password Confirmation')
+                ->onlyOnForms(),
+
+            HasOne::make('Profile'),
+
+            HasMany::make('Shipping Addresses', 'shippingAddresses', ShippingAddress::class),
+
+            BelongsToMany::make('Roles')
         ];
     }
 

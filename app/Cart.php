@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class Cart extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,18 +34,9 @@ class Cart extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
-
-    /**
-     * Get the cart_products for the Cart.
-     */
-    public function cartProducts()
-    {
-        return $this->hasMany(\App\cart_product::class);
-    }
-
 
     /**
      * Get the User for the Cart.

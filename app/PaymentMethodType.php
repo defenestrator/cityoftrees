@@ -3,16 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class PaymentMethodType extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'type', 'receiving_account', 'active'
+        'name', 'receiving_account', 'active'
     ];
 
     /**
@@ -32,19 +35,9 @@ class PaymentMethodType extends Model
     protected $casts = [
         'uuid' => 'string',
         'name' => 'string',
-        'type' => 'string',
         'receiving_account' => 'string',
         'active' => 'boolean',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
-
-    /**
-     * Get the Users for the PaymentMethodType.
-     */
-    public function users()
-    {
-        return $this->belongsToMany(\App\User::class);
-    }
-
 }

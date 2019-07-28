@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Traits\HasUuid;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'screen_name', 'email', 'password'
+        'email', 'password'
     ];
 
     /**
@@ -35,15 +36,12 @@ class User extends Authenticatable
      */
     protected $casts = [
         'uuid' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'screen_name' => 'string',
         'email' => 'string',
         'email_verified_at' => 'datetime',
         'password' => 'string',
         'remember_token' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**
@@ -110,19 +108,20 @@ class User extends Authenticatable
 
 
     /**
+     * Get the PaymentMethods for the User.
+     */
+    public function paymentMethods()
+    {
+        return $this->hasMany(\App\PaymentMethod::class);
+    }
+
+
+    /**
      * Get the Roles for the User.
      */
     public function roles()
     {
         return $this->belongsToMany(\App\Role::class);
-    }
-
-    /**
-     * Get the PaymentMethodTypes for the User.
-     */
-    public function paymentMethodTypes()
-    {
-        return $this->belongsToMany(\App\PaymentMethodType::class);
     }
 
     /**

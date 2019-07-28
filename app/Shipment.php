@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class Shipment extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -33,8 +36,8 @@ class Shipment extends Model
         'uuid' => 'string',
         'shipped_on_date' => 'timestamp',
         'received_on_date' => 'timestamp',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**

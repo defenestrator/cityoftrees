@@ -22,7 +22,7 @@ class CouponResource extends JsonResource
             'expires' => $this->expires,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'users' => UserResource::collection($this->whenLoaded('users'))
+            'users' => new UserCollection($this->whenLoaded('users'))
         ];
     }
 }

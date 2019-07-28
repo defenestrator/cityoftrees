@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class Image extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -37,7 +40,7 @@ class Image extends Model
         'small' => 'string',
         'square' => 'string',
         'original' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 }

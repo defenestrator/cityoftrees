@@ -3,16 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class Product extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'manufacturer_id', 'vendor_id', 'name', 'description', 'height', 'width', 'depth', 'price'
+        'manufacturer_id', 'vendor_id', 'name', 'description', 'height', 'width', 'depth', 'weight', 'volume', 'contents', 'price'
     ];
 
     /**
@@ -32,18 +35,9 @@ class Product extends Model
     protected $casts = [
         'uuid' => 'string',
         'name' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
-
-    /**
-     * Get the cart_products for the Product.
-     */
-    public function cartProducts()
-    {
-        return $this->hasMany(\App\cart_product::class);
-    }
-
 
     /**
      * Get the Manufacturer for the Product.

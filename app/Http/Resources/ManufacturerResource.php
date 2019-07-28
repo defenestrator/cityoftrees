@@ -18,15 +18,19 @@ class ManufacturerResource extends JsonResource
             'id' => $this->id,
             'uuid' => $this->uuid,
             'name' => $this->name,
+            'phone' => $this->phone,
+            'contact_email' => $this->contact_email,
             'country' => $this->country,
             'street_address' => $this->street_address,
             'unit_number' => $this->unit_number,
             'city' => $this->city,
             'state' => $this->state,
             'postal_code' => $this->postal_code,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'products' => ProductResource::collection($this->whenLoaded('products'))
+            'products' => new ProductCollection($this->whenLoaded('products'))
         ];
     }
 }

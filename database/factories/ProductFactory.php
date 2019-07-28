@@ -27,6 +27,9 @@ $factory->define(Product::class, function (Faker $faker) {
         'height' => random_int(0, 4294967295),
         'width' => random_int(0, 4294967295),
         'depth' => random_int(0, 4294967295),
+        'weight' => random_int(0, 4294967295),
+        'volume' => random_int(0, 4294967295),
+        'contents' => random_int(0, 4294967295),
         'price' => random_int(0, 4294967295)
     ];
 });

@@ -15,7 +15,7 @@ class CartAPIController extends Controller
  
     public function show(Cart $cart)
     {
-        return new CartResource($cart->load(['cartProducts', 'user', 'products']));
+        return new CartResource($cart->load(['user', 'products']));
     }
 
     public function store(Request $request)

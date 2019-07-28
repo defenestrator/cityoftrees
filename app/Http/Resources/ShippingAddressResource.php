@@ -18,16 +18,18 @@ class ShippingAddressResource extends JsonResource
             'id' => $this->id,
             'uuid' => $this->uuid,
             'user_id' => $this->user_id,
-            'name' => $this->name,
+            'ship_to_name' => $this->ship_to_name,
             'country' => $this->country,
             'street_address' => $this->street_address,
             'unit_number' => $this->unit_number,
             'city' => $this->city,
             'state' => $this->state,
             'postal_code' => $this->postal_code,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'subscriptions' => SubscriptionResource::collection($this->whenLoaded('subscriptions')),
+            'subscriptions' => new SubscriptionCollection($this->whenLoaded('subscriptions')),
             'user' => new UserResource($this->whenLoaded('user'))
         ];
     }

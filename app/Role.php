@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,8 +32,8 @@ class Role extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**

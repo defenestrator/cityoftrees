@@ -20,7 +20,7 @@ class OrderResource extends JsonResource
             'invoice_id' => $this->invoice_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'shipments' => ShipmentResource::collection($this->whenLoaded('shipments')),
+            'shipments' => new ShipmentCollection($this->whenLoaded('shipments')),
             'invoice' => new InvoiceResource($this->whenLoaded('invoice'))
         ];
     }

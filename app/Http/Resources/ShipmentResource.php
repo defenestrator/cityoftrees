@@ -22,7 +22,7 @@ class ShipmentResource extends JsonResource
             'received_on_date' => $this->received_on_date,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'orders' => OrderResource::collection($this->whenLoaded('orders'))
+            'orders' => new OrderCollection($this->whenLoaded('orders'))
         ];
     }
 }

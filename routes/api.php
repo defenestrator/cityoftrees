@@ -59,6 +59,10 @@ Route::resource('paymentMethodTypes', 'PaymentMethodTypeAPIController', [
     'only' => ['index', 'show', 'store', 'update', 'destroy']
 ]);
 
+Route::resource('paymentMethods', 'PaymentMethodAPIController', [
+    'only' => ['index', 'show', 'store', 'update', 'destroy']
+]);
+
 Route::resource('invoices', 'InvoiceAPIController', [
     'only' => ['index', 'show', 'store', 'update', 'destroy']
 ]);

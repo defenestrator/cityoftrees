@@ -21,7 +21,6 @@ $factory->define(PaymentMethodType::class, function (Faker $faker) {
     return [
         'uuid' => $faker->sentence(),
         'name' => $faker->name(),
-        'type' => $faker->sentence(),
         'receiving_account' => $faker->sentence(),
         'active' => $faker->boolean()
     ];

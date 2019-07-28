@@ -3,16 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class ShippingAddress extends Model
 {
+    use HasUuid;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code'
+        'user_id', 'ship_to_name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code', 'lat', 'lng'
     ];
 
     /**
@@ -31,15 +34,17 @@ class ShippingAddress extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-        'name' => 'string',
+        'ship_to_name' => 'string',
         'country' => 'string',
         'street_address' => 'string',
         'unit_number' => 'string',
         'city' => 'string',
         'state' => 'string',
         'postal_code' => 'string',
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp'
+        'lat' => 'float',
+        'lng' => 'float',
+                'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
     /**

@@ -16,11 +16,12 @@ class PaymentResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'payment_method_type_user_id' => $this->payment_method_type_user_id,
+            'uuid' => $this->uuid,
+            'payment_method_id' => $this->payment_method_id,
             'amount' => $this->amount,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'invoices' => InvoiceResource::collection($this->whenLoaded('invoices'))
+            'invoices' => new InvoiceCollection($this->whenLoaded('invoices'))
         ];
     }
 }

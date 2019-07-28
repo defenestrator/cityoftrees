@@ -21,12 +21,14 @@ $factory->define(ShippingAddress::class, function (Faker $faker) {
     return [
         'uuid' => $faker->sentence(),
         'user_id' => random_int(1, 10),
-        'name' => $faker->name(),
+        'ship_to_name' => $faker->sentence(),
         'country' => $faker->sentence(),
         'street_address' => $faker->sentence(),
         'unit_number' => $faker->sentence(),
         'city' => $faker->sentence(),
         'state' => $faker->sentence(),
-        'postal_code' => $faker->sentence()
+        'postal_code' => $faker->sentence(),
+        'lat' => $faker->latitude(),
+        'lng' => $faker->longitude()
     ];
 });
