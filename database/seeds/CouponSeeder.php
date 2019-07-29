@@ -1,6 +1,6 @@
 <?php
 
-use App\Coupon;
+use Cot\Coupon;
 use Illuminate\Database\Seeder;
 
 class CouponSeeder extends Seeder

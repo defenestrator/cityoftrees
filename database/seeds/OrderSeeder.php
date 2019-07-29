@@ -1,6 +1,6 @@
 <?php
 
-use App\Order;
+use Cot\Order;
 use Illuminate\Database\Seeder;
 
 class OrderSeeder extends Seeder

@@ -1,6 +1,6 @@
 <?php
 
-use App\ShippingAddress;
+use Cot\ShippingAddress;
 use Illuminate\Database\Seeder;
 
 class ShippingAddressSeeder extends Seeder

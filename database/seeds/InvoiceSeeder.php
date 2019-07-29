@@ -1,6 +1,6 @@
 <?php
 
-use App\Invoice;
+use Cot\Invoice;
 use Illuminate\Database\Seeder;
 
 class InvoiceSeeder extends Seeder

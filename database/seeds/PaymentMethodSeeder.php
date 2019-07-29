@@ -1,6 +1,6 @@
 <?php
 
-use App\PaymentMethod;
+use Cot\PaymentMethod;
 use Illuminate\Database\Seeder;
 
 class PaymentMethodSeeder extends Seeder

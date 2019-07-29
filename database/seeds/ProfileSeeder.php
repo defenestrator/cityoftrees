@@ -1,6 +1,6 @@
 <?php
 
-use App\Profile;
+use Cot\Profile;
 use Illuminate\Database\Seeder;
 
 class ProfileSeeder extends Seeder

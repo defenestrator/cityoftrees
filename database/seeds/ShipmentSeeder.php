@@ -1,6 +1,6 @@
 <?php
 
-use App\Shipment;
+use Cot\Shipment;
 use Illuminate\Database\Seeder;
 
 class ShipmentSeeder extends Seeder

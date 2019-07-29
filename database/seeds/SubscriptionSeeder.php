@@ -1,6 +1,6 @@
 <?php
 
-use App\Subscription;
+use Cot\Subscription;
 use Illuminate\Database\Seeder;
 
 class SubscriptionSeeder extends Seeder
