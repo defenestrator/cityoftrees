@@ -1,10 +1,33 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasUuid;
+use Cot\Traits\HasUuid;
 
+/**
+ * Cot\Shipment
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property int $shipping_method_id
+ * @property int|null $shipped_on_date
+ * @property int|null $received_on_date
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Order[] $orders
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereReceivedOnDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereShippedOnDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereShippingMethodId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Shipment whereUuid($value)
+ * @mixin \Eloquent
+ */
 class Shipment extends Model
 {
     use HasUuid;
@@ -36,7 +59,7 @@ class Shipment extends Model
         'uuid' => 'string',
         'shipped_on_date' => 'timestamp',
         'received_on_date' => 'timestamp',
-                'created_at' => 'datetime',
+        'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
 
@@ -45,7 +68,7 @@ class Shipment extends Model
      */
     public function orders()
     {
-        return $this->belongsToMany(\App\Order::class);
+        return $this->belongsToMany(\Cot\Order::class);
     }
 
 }

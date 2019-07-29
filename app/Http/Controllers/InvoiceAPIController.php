@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Invoice;
-use App\Http\Resources\InvoiceCollection;
-use App\Http\Resources\InvoiceResource;
+use Cot\Invoice;
+use Cot\Http\Resources\InvoiceCollection;
+use Cot\Http\Resources\InvoiceResource;
  
 class InvoiceAPIController extends Controller
 {

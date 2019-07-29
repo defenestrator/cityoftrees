@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Subscription;
-use App\Http\Resources\SubscriptionCollection;
-use App\Http\Resources\SubscriptionResource;
+use Cot\Subscription;
+use Cot\Http\Resources\SubscriptionCollection;
+use Cot\Http\Resources\SubscriptionResource;
  
 class SubscriptionAPIController extends Controller
 {

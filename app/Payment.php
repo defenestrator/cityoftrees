@@ -1,10 +1,32 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasUuid;
+use Cot\Traits\HasUuid;
 
+/**
+ * Cot\Payment
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property int $payment_method_id
+ * @property int $amount
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Invoice[] $invoices
+ * @property-read \Cot\PaymentMethod $paymentMethod
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment wherePaymentMethodId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Payment whereUuid($value)
+ * @mixin \Eloquent
+ */
 class Payment extends Model
 {
     use HasUuid;
@@ -34,7 +56,7 @@ class Payment extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-                'created_at' => 'datetime',
+        'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
 
@@ -43,7 +65,7 @@ class Payment extends Model
      */
     public function paymentMethod()
     {
-        return $this->hasOne(\App\PaymentMethod::class);
+        return $this->hasOne(\Cot\PaymentMethod::class);
     }
 
 
@@ -52,7 +74,7 @@ class Payment extends Model
      */
     public function invoices()
     {
-        return $this->belongsToMany(\App\Invoice::class);
+        return $this->belongsToMany(\Cot\Invoice::class);
     }
 
 }

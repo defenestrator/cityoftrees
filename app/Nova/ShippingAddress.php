@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova;
+namespace Cot\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class ShippingAddress extends Resource
      *
      * @var string
      */
-    public static $model = 'App\ShippingAddress';
+    public static $model = 'Cot\ShippingAddress';
 
     /**
      * The single value that should be used to represent the resource when being displayed.

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova;
+namespace Cot\Nova;
 
 use Laravel\Nova\Resource as NovaResource;
 use Laravel\Nova\Http\Requests\NovaRequest;

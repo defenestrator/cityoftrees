@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Cart;
-use App\Http\Resources\CartCollection;
-use App\Http\Resources\CartResource;
+use Cot\Cart;
+use Cot\Http\Resources\CartCollection;
+use Cot\Http\Resources\CartResource;
  
 class CartAPIController extends Controller
 {

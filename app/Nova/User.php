@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova;
+namespace Cot\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\User';
+    public static $model = 'Cot\\User';
 
     /**
      * The single value that should be used to represent the resource when being displayed.

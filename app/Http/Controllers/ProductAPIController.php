@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Product;
-use App\Http\Resources\ProductCollection;
-use App\Http\Resources\ProductResource;
+use Cot\Product;
+use Cot\Http\Resources\ProductCollection;
+use Cot\Http\Resources\ProductResource;
  
 class ProductAPIController extends Controller
 {

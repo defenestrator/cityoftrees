@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova;
+namespace Cot\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class Role extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Role';
+    public static $model = 'Cot\Role';
 
     /**
      * The single value that should be used to represent the resource when being displayed.

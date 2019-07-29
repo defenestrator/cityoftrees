@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\User;
-use App\Http\Resources\UserCollection;
-use App\Http\Resources\UserResource;
+use Cot\User;
+use Cot\Http\Resources\UserCollection;
+use Cot\Http\Resources\UserResource;
  
 class UserAPIController extends Controller
 {

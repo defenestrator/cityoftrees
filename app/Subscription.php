@@ -1,10 +1,35 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasUuid;
+use Cot\Traits\HasUuid;
 
+/**
+ * Cot\Subscription
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property int|null $shipping_address_id
+ * @property string $frequency
+ * @property bool|null $active
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Invoice[] $invoices
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Product[] $products
+ * @property-read \Cot\ShippingAddress|null $shippingAddress
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereFrequency($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereShippingAddressId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Subscription whereUuid($value)
+ * @mixin \Eloquent
+ */
 class Subscription extends Model
 {
     use HasUuid;
@@ -36,7 +61,7 @@ class Subscription extends Model
         'uuid' => 'string',
         'frequency' => 'string',
         'active' => 'boolean',
-                'created_at' => 'datetime',
+        'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
 
@@ -45,7 +70,7 @@ class Subscription extends Model
      */
     public function shippingAddress()
     {
-        return $this->belongsTo(\App\ShippingAddress::class);
+        return $this->belongsTo(\Cot\ShippingAddress::class);
     }
 
 
@@ -54,7 +79,7 @@ class Subscription extends Model
      */
     public function products()
     {
-        return $this->belongsToMany(\App\Product::class);
+        return $this->belongsToMany(\Cot\Product::class);
     }
 
     /**
@@ -62,7 +87,7 @@ class Subscription extends Model
      */
     public function invoices()
     {
-        return $this->belongsToMany(\App\Invoice::class);
+        return $this->belongsToMany(\Cot\Invoice::class);
     }
 
 }

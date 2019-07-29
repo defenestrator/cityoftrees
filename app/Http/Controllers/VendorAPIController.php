@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Vendor;
-use App\Http\Resources\VendorCollection;
-use App\Http\Resources\VendorResource;
+use Cot\Vendor;
+use Cot\Http\Resources\VendorCollection;
+use Cot\Http\Resources\VendorResource;
  
 class VendorAPIController extends Controller
 {

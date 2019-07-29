@@ -1,10 +1,42 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\HasUuid;
+use Cot\Traits\HasUuid;
 
+/**
+ * Cot\Invoice
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property int|null $user_id
+ * @property int $subtotal
+ * @property int|null $tax
+ * @property int|null $shipping
+ * @property int|null $discount
+ * @property int $total
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Payment[] $payments
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Product[] $products
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Subscription[] $subscriptions
+ * @property-read \Cot\User|null $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereDiscount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereShipping($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereSubtotal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereTax($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereTotal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Invoice whereUuid($value)
+ * @mixin \Eloquent
+ */
 class Invoice extends Model
 {
     use HasUuid;
@@ -34,7 +66,7 @@ class Invoice extends Model
      */
     protected $casts = [
         'uuid' => 'string',
-                'created_at' => 'datetime',
+        'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
 
@@ -43,7 +75,7 @@ class Invoice extends Model
      */
     public function user()
     {
-        return $this->belongsTo(\App\User::class);
+        return $this->belongsTo(\Cot\User::class);
     }
 
 
@@ -52,7 +84,7 @@ class Invoice extends Model
      */
     public function products()
     {
-        return $this->belongsToMany(\App\Product::class);
+        return $this->belongsToMany(\Cot\Product::class);
     }
 
     /**
@@ -60,7 +92,7 @@ class Invoice extends Model
      */
     public function payments()
     {
-        return $this->belongsToMany(\App\Payment::class);
+        return $this->belongsToMany(\Cot\Payment::class);
     }
 
     /**
@@ -68,7 +100,7 @@ class Invoice extends Model
      */
     public function subscriptions()
     {
-        return $this->belongsToMany(\App\Subscription::class);
+        return $this->belongsToMany(\Cot\Subscription::class);
     }
 
 }

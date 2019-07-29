@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\PaymentMethod;
-use App\Http\Resources\PaymentMethodCollection;
-use App\Http\Resources\PaymentMethodResource;
+use Cot\PaymentMethod;
+use Cot\Http\Resources\PaymentMethodCollection;
+use Cot\Http\Resources\PaymentMethodResource;
  
 class PaymentMethodAPIController extends Controller
 {

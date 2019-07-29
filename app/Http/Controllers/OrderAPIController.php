@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Order;
-use App\Http\Resources\OrderCollection;
-use App\Http\Resources\OrderResource;
+use Cot\Order;
+use Cot\Http\Resources\OrderCollection;
+use Cot\Http\Resources\OrderResource;
  
 class OrderAPIController extends Controller
 {

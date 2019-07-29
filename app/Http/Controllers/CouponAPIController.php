@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Coupon;
-use App\Http\Resources\CouponCollection;
-use App\Http\Resources\CouponResource;
+use Cot\Coupon;
+use Cot\Http\Resources\CouponCollection;
+use Cot\Http\Resources\CouponResource;
  
 class CouponAPIController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova;
+namespace Cot\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class Profile extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Profile';
+    public static $model = 'Cot\Profile';
 
     /**
      * The single value that should be used to represent the resource when being displayed.

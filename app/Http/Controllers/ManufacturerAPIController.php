@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Manufacturer;
-use App\Http\Resources\ManufacturerCollection;
-use App\Http\Resources\ManufacturerResource;
+use Cot\Manufacturer;
+use Cot\Http\Resources\ManufacturerCollection;
+use Cot\Http\Resources\ManufacturerResource;
  
 class ManufacturerAPIController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Role;
-use App\Http\Resources\RoleCollection;
-use App\Http\Resources\RoleResource;
+use Cot\Role;
+use Cot\Http\Resources\RoleCollection;
+use Cot\Http\Resources\RoleResource;
  
 class RoleAPIController extends Controller
 {

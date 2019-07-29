@@ -1,12 +1,47 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Traits\HasUuid;
+use Cot\Traits\HasUuid;
 
+/**
+ * Cot\User
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Cart[] $carts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Coupon[] $coupons
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Invoice[] $invoices
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Order[] $orders
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\PaymentMethod[] $paymentMethods
+ * @property-read \Cot\Profile $profile
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Role[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\ShippingAddress[] $shippingAddresses
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Subscription[] $subscriptions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\Vendor[] $vendors
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereEmailVerifiedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereUuid($value)
+ * @mixin \Eloquent
+ */
 class User extends Authenticatable
 {
     use Notifiable, HasUuid;
@@ -49,7 +84,7 @@ class User extends Authenticatable
      */
     public function profile()
     {
-        return $this->hasOne(\App\Profile::class);
+        return $this->hasOne(\Cot\Profile::class);
     }
 
 
@@ -58,7 +93,7 @@ class User extends Authenticatable
      */
     public function vendors()
     {
-        return $this->hasMany(\App\Vendor::class);
+        return $this->hasMany(\Cot\Vendor::class);
     }
 
 
@@ -67,7 +102,7 @@ class User extends Authenticatable
      */
     public function subscriptions()
     {
-        return $this->hasMany(\App\Subscription::class);
+        return $this->hasMany(\Cot\Subscription::class);
     }
 
 
@@ -76,7 +111,7 @@ class User extends Authenticatable
      */
     public function carts()
     {
-        return $this->hasMany(\App\Cart::class);
+        return $this->hasMany(\Cot\Cart::class);
     }
 
 
@@ -85,7 +120,7 @@ class User extends Authenticatable
      */
     public function invoices()
     {
-        return $this->hasMany(\App\Invoice::class);
+        return $this->hasMany(\Cot\Invoice::class);
     }
 
 
@@ -94,7 +129,7 @@ class User extends Authenticatable
      */
     public function shippingAddresses()
     {
-        return $this->hasMany(\App\ShippingAddress::class);
+        return $this->hasMany(\Cot\ShippingAddress::class);
     }
 
 
@@ -103,7 +138,7 @@ class User extends Authenticatable
      */
     public function orders()
     {
-        return $this->hasMany(\App\Order::class);
+        return $this->hasMany(\Cot\Order::class);
     }
 
 
@@ -112,7 +147,7 @@ class User extends Authenticatable
      */
     public function paymentMethods()
     {
-        return $this->hasMany(\App\PaymentMethod::class);
+        return $this->hasMany(\Cot\PaymentMethod::class);
     }
 
 
@@ -121,7 +156,7 @@ class User extends Authenticatable
      */
     public function roles()
     {
-        return $this->belongsToMany(\App\Role::class);
+        return $this->belongsToMany(\Cot\Role::class);
     }
 
     /**
@@ -129,7 +164,7 @@ class User extends Authenticatable
      */
     public function coupons()
     {
-        return $this->belongsToMany(\App\Coupon::class);
+        return $this->belongsToMany(\Cot\Coupon::class);
     }
 
 }

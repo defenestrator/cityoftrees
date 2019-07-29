@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Shipment;
-use App\Http\Resources\ShipmentCollection;
-use App\Http\Resources\ShipmentResource;
+use Cot\Shipment;
+use Cot\Http\Resources\ShipmentCollection;
+use Cot\Http\Resources\ShipmentResource;
  
 class ShipmentAPIController extends Controller
 {

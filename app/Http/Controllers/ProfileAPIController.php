@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Profile;
-use App\Http\Resources\ProfileCollection;
-use App\Http\Resources\ProfileResource;
+use Cot\Profile;
+use Cot\Http\Resources\ProfileCollection;
+use Cot\Http\Resources\ProfileResource;
  
 class ProfileAPIController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cot\Http\Controllers;
 
-use App\Image;
-use App\Http\Resources\ImageCollection;
-use App\Http\Resources\ImageResource;
+use Cot\Image;
+use Cot\Http\Resources\ImageCollection;
+use Cot\Http\Resources\ImageResource;
  
 class ImageAPIController extends Controller
 {

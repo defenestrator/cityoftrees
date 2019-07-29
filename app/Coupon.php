@@ -1,9 +1,32 @@
 <?php
 
-namespace App;
+namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Cot\Coupon
+ *
+ * @property int $id
+ * @property bool|null $percentage
+ * @property int $value
+ * @property string $code
+ * @property int|null $expires
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cot\User[] $users
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereExpires($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon wherePercentage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Coupon whereValue($value)
+ * @mixin \Eloquent
+ */
 class Coupon extends Model
 {
 
@@ -43,7 +66,7 @@ class Coupon extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(\App\User::class);
+        return $this->belongsToMany(\Cot\User::class);
     }
 
 }
