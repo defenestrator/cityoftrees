@@ -76,5 +76,6 @@
             @yield('content')
         </main>
     </div>
+    @livewireAssets
 </body>
 </html>

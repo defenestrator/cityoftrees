@@ -142,7 +142,7 @@
         </div>
         <div class="position-ref flex-top" style="background-color:#353839; color:#fff;">
             <div class="content">
-                <h3>Grand Opening &mdash; Summer 2019</h3>
+                <h3>Grand Opening &mdash; Q1 2020</h3>
             </div>
         </div>
     </div>

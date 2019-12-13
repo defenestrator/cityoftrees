@@ -13,11 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @livewire('cocks')
+                    <hr>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
