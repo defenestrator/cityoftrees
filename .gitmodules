@@ -1,0 +1,3 @@
+[submodule "cot-docker"]
+	path = cot-docker
+	url = https://github.com/Laradock/laradock.git

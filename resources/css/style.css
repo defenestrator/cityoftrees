@@ -1,0 +1,23 @@
+/* Reset */
+@import "tailwindcss/base";
+@import "reset";
+
+/* Components */
+@import "tailwindcss/components";
+@import "buttons";
+@import "nprogress";
+
+/* Utilities */
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,400|Playfair+Display:400,900&display=swap&subset=latin-ext');
+
+.form-input:focus, .form-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.5);
+    border-color: #4FD1C5;
+}
+
+.form-checkbox {
+    color: #38B2AC;
+}
