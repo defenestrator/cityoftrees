@@ -5,7 +5,6 @@
 /* Components */
 @import "tailwindcss/components";
 @import "buttons";
-@import "nprogress";
 
 /* Utilities */
 @import "tailwindcss/utilities";

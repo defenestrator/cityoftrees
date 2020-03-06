@@ -4,6 +4,12 @@
     &:hover, &:focus { @apply bg-green-500 }
   }
 
+.btn-green {
+    @apply bg-green-600 text-white font-bold py-2 px-4 rounded;
+
+    &:hover, &:focus { @apply bg-teal-500 }
+}
+
 .btn-spinner,
 .btn-spinner:after {
   border-radius: 50%;

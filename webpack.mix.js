@@ -2,7 +2,8 @@ const cssImport = require('postcss-import')
 const cssNesting = require('postcss-nesting')
 const mix = require('laravel-mix')
 const purgecss = require('@fullhuman/postcss-purgecss')
-const tailwindcss = require('tailwindcss')
+require('laravel-mix-tailwind')
+
 
 mix.webpackConfig({
         resolve: {
@@ -18,26 +19,30 @@ mix.webpackConfig({
         module: {
             rules: [
                 {
-                test: /\.(html|svelte)$/,
-                exclude: /node_modules/,
-                use: 'svelte-loader',
+                    test: /\.(html|svelte)$/,
+                    exclude: /node_modules/,
+                    use: 'svelte-loader',
                 }
             ]
         }
     })
     .js('./resources/js/app.js', 'public/js')
     .postCss('./resources/css/style.css', 'public/css')
+    .tailwind({
+        // configPath: '/tailwind.config.js'
+    })
     .options({
         postCss: [
             cssImport(),
             cssNesting(),
-            tailwindcss('tailwind.config.js'),
             ...mix.inProduction() ? [
                 purgecss({
                     content: [
+                        './resources/**/*.css',
+                        './resources/js/**/*.svelte',
                         './resources/views/**/*.blade.php',
                         './resources/views/**/*.html',
-                        './resources/js/**/*.svelte',
+                        './resources/views/**/*.svelte',
                     ],
                     defaultExtractor: content =>
                         content.match(/[\w-/:.]+(?<!:)/g) || []
