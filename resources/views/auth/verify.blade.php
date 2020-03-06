@@ -22,7 +22,7 @@
                         </p>
 
                         <p class="leading-normal mt-6">
-                            {{ __('If you did not receive the email') }}, <a class="text-teal-500 hover:text-teal-700 no-underline" onclick="event.preventDefault(); document.getElementById('resend-verification-form').submit();">{{ __('click here to request another') }}</a>.
+                            {{ __('If you did not receive the email') }}, <a class="text-green-500 hover:text-green-700 no-underline" onclick="event.preventDefault(); document.getElementById('resend-verification-form').submit();">{{ __('click here to request another') }}</a>.
                         </p>
 
                         <form id="resend-verification-form" method="POST" action="{{ route('verification.resend') }}" class="hidden">

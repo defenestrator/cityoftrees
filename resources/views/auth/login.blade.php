@@ -18,7 +18,7 @@
                                 {{ __('E-Mail Address') }}:
                             </label>
 
-                            <input id="email" type="email" class="form-input border-teal-500 w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class="form-input border-green-500 w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -49,12 +49,12 @@
                         </div>
 
                         <div class="flex flex-wrap items-center">
-                            <button type="submit" class="bg-teal-500 hover:bg-teal-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 {{ __('Login') }}
                             </button>
 
                             @if (Route::has('password.request'))
-                                <a class="text-sm text-teal-500 hover:text-teal-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
+                                <a class="text-sm text-green-500 hover:text-green-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
@@ -62,7 +62,7 @@
                             @if (Route::has('register'))
                                 <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
                                     {{ __("Don't have an account?") }}
-                                    <a class="text-teal-500 hover:text-teal-700 no-underline" href="{{ route('register') }}">
+                                    <a class="text-green-500 hover:text-green-700 no-underline" href="{{ route('register') }}">
                                         {{ __('Register') }}
                                     </a>
                                 </p>

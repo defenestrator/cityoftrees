@@ -32,12 +32,12 @@
                         </div>
 
                         <div class="flex flex-wrap items-center">
-                            <button type="submit" class="bg-teal-500 hover:bg-teal-700 text-gray-100 font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-gray-100 font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 {{ __('Confirm Password') }}
                             </button>
 
                             @if (Route::has('password.request'))
-                                <a class="text-sm text-teal-500 hover:text-teal-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
+                                <a class="text-sm text-green-500 hover:text-green-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif

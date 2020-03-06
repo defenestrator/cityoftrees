@@ -35,12 +35,12 @@
                         </div>
 
                         <div class="flex flex-wrap">
-                            <button type="submit" class="bg-teal-500 hover:bg-teal-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 {{ __('Send Password Reset Link') }}
                             </button>
 
                             <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
-                                <a class="text-teal-500 hover:text-teal-700 no-underline" href="{{ route('login') }}">
+                                <a class="text-green-500 hover:text-green-700 no-underline" href="{{ route('login') }}">
                                     {{ __('Back to login') }}
                                 </a>
                             </p>

@@ -18,11 +18,11 @@
     @if(Route::has('login'))
         <div class="absolute top-0 right-0 mt-4 mr-4">
             @auth
-                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase">{{ __('Home') }}</a>
             @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
+                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase pr-6">{{ __('Login') }}</a>
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase">{{ __('Register') }}</a>
                 @endif
             @endauth
         </div>
@@ -36,22 +36,22 @@
                 </h1>
                 <ul class="list-reset">
                     <li class="inline pr-8">
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
+                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="Documentation">Documentation</a>
                     </li>
                     <li class="inline pr-8">
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
+                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="Laracasts">Laracasts</a>
                     </li>
                     <li class="inline pr-8">
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
+                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="News">News</a>
                     </li>
                     <li class="inline pr-8">
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
+                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="Nova">Nova</a>
                     </li>
                     <li class="inline pr-8">
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
+                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="Forge">Forge</a>
                     </li>
                     <li class="inline pr-8">
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
+                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-green-800 uppercase" title="GitHub">GitHub</a>
                     </li>
                 </ul>
             </div>

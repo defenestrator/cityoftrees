@@ -16248,12 +16248,12 @@ input:focus, input:active, select:focus, select:active, textarea:focus, textarea
 
 .form-input:focus, .form-checkbox:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(79, 209, 197, 0.5);
-  border-color: #4FD1C5;
+  box-shadow: 0 0 0 3px rgba(104, 211, 145, 0.5);
+  border-color: #68d391;
 }
 
 .form-checkbox {
-  color: #38B2AC;
+  color: #48BB78;
 }
 
 @media (min-width: 640px){
