@@ -6,7 +6,7 @@
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
-                    <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
+                    <div class="font-semibold bg-green-800 text-white py-3 px-6">
                         {{ __('Login') }}
                     </div>
 
@@ -54,7 +54,7 @@
                             </button>
 
                             @if (Route::has('password.request'))
-                                <a class="text-sm text-green-500 hover:text-green-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
+                                <a class="text-sm text-green-700 hover:text-green-600 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
@@ -62,7 +62,7 @@
                             @if (Route::has('register'))
                                 <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
                                     {{ __("Don't have an account?") }}
-                                    <a class="text-green-500 hover:text-green-700 no-underline" href="{{ route('register') }}">
+                                    <a class="text-green-700 hover:text-green-600 no-underline" href="{{ route('register') }}">
                                         {{ __('Register') }}
                                     </a>
                                 </p>
