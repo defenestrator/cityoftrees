@@ -1,11 +1,11 @@
 .btn-blue {
     @apply px-6 py-3 rounded bg-blue-600 text-white text-sm font-bold whitespace-no-wrap;
 
-    &:hover, &:focus { @apply bg-green-500 }
+    &:hover, &:focus { @apply bg-blue-500 }
   }
 
 .btn-green {
-    @apply bg-green-600 text-white font-bold py-2 px-4 rounded;
+    @apply bg-green-600 text-white font-bold py-3 px-6 rounded;
 
     &:hover, &:focus { @apply bg-green-500 }
 }

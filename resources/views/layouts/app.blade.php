@@ -12,8 +12,8 @@
     <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
-    <div id="app" class="forest full-height height-100">
+<body class="forest bg-gray-100 h-screen antialiased leading-none">
+    <div id="app" class="mask full-height h-screen">
         <nav class="mb-8 py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center text-gray-800">

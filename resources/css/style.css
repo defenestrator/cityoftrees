@@ -51,9 +51,9 @@ h3 {
     height: 25vh;
 }
 
-/* .mask {
+.mask {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.0) 50%, rgba(255, 255, 255, 0.9) 100%);
-} */
+}
 
 .forest {
     width:100%;
