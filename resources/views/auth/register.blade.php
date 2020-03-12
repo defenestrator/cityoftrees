@@ -6,7 +6,7 @@
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
-                    <div class="font-semibold bg-green-800 text-white py-3 px-6 mb-0">
+                    <div class="font-semibold shadow py-3 px-6 mb-0">
                         {{ __('Register') }}
                     </div>
 

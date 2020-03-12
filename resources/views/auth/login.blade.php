@@ -6,7 +6,7 @@
             <div class="w-full max-w-sm">
                 <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
-                    <div class="font-semibold bg-green-800 text-white py-3 px-6">
+                    <div class="font-semibold py-3 px-6 shadow">
                         {{ __('Login') }}
                     </div>
 
