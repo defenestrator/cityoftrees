@@ -5,7 +5,7 @@ const app = new App({
     props: {
 
     },
-    target: document.getElementById('app')
+    target: document.getElementById('dashboard')
 });
 
 window.app = app;

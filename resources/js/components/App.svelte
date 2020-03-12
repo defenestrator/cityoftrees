@@ -6,7 +6,7 @@ onMount(() => {
 });
 </script>
 <svelte:head>
-	<link href="css/app.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </svelte:head>
 <main>
 	<div class="flex-container content-start p-4 m-4">
