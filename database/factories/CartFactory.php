@@ -20,6 +20,6 @@ use Carbon\Carbon;
 $factory->define(Cart::class, function (Faker $faker) {
     return [
         'uuid' => $faker->uuid(),
-        'user_id' => random_int(1, 10)
+        'user_id' => factory(Cot\User::class)->create()
     ];
 });

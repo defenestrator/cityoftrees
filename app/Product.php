@@ -125,4 +125,9 @@ class Product extends Model
         return $this->belongsToMany(\Cot\Invoice::class);
     }
 
+    public function images()
+    {
+        return $this->morphMany('Cot\Image', 'imageable');
+    }
+
 }

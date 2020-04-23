@@ -74,4 +74,12 @@ class Image extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
+
+    /**
+     * Get the owning imageable model.
+     */
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }
