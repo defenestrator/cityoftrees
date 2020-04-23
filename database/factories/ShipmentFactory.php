@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Shipment::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'shipping_method_id' => random_int(0, 9223372036854775807),
         'shipped_on_date' => $faker->dateTimeBetween('-30 years', 'now'),
         'received_on_date' => $faker->dateTimeBetween('-30 years', 'now')

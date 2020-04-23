@@ -53,7 +53,9 @@
           :selected="selectedResourceId"
           label="display"
         >
-          <option value="" selected :disabled="!field.nullable">&mdash;</option>
+          <option value="" selected :disabled="!field.nullable">{{
+            placeholder
+          }}</option>
         </select-control>
 
         <create-relation-button
@@ -82,7 +84,7 @@
         <checkbox-with-label
           :dusk="`${field.resourceName}-with-trashed-checkbox`"
           :checked="withTrashed"
-          @change="toggleWithTrashed"
+          @input="toggleWithTrashed"
         >
           {{ __('With Trashed') }}
         </checkbox-with-label>
@@ -134,6 +136,8 @@ export default {
   methods: {
     initializeComponent() {
       this.withTrashed = false
+
+      this.selectedResourceId = this.field.value
 
       // If a user is editing an existing resource with this relation
       // we'll have a belongsToId on the field, and we should prefill
@@ -352,11 +356,19 @@ export default {
 
     canShowNewRelationModal() {
       return (
+        this.field.showCreateRelationButton &&
         !this.shownViaNewRelationModal &&
         !this.isLocked &&
         !this.isReadonly &&
         this.authorizedToCreate
       )
+    },
+
+    /**
+     * Return the placeholder text for the field.
+     */
+    placeholder() {
+      return this.field.placeholder || this.__('—')
     },
   },
 }

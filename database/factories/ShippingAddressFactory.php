@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(ShippingAddress::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'user_id' => random_int(1, 10),
         'ship_to_name' => $faker->sentence(),
         'country' => $faker->sentence(),

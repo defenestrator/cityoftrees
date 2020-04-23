@@ -2,8 +2,9 @@
 
 namespace Cot;
 
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
 
 /**
  * Cot\Subscription
@@ -32,7 +33,7 @@ use Cot\Traits\HasUuid;
  */
 class Subscription extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -40,7 +41,7 @@ class Subscription extends Model
      * @var array
      */
     protected $fillable = [
-        'shipping_address_id', 'frequency', 'active'
+        'uuid', 'shipping_address_id', 'frequency', 'active'
     ];
 
     /**
@@ -58,7 +59,7 @@ class Subscription extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'frequency' => 'string',
         'active' => 'boolean',
         'created_at' => 'datetime',

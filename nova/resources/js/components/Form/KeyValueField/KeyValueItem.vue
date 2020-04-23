@@ -38,7 +38,7 @@
     <div
       v-if="isEditable"
       class="flex justify-center h-11 w-11 absolute"
-      style="right: -50px"
+      style="right: -50px;"
     >
       <button
         @click="$emit('remove-row', item.id)"

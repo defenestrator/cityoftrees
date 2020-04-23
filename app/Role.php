@@ -30,7 +30,7 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'uuid', 'name'
     ];
 
     /**

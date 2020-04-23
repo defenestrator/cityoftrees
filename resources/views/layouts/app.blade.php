@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'City of Trees') }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
@@ -29,8 +29,7 @@
                                 <a class="text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
-                            <span class="pr-4">{{ Auth::user()->name }}</span>
-
+                        <span class="pr-4">{{ Auth::user()->name }}</span>
                             <a href="{{ route('logout') }}"
                                class="text-sm p-3"
                                onclick="event.preventDefault();
@@ -39,6 +38,7 @@
                                 {{ csrf_field() }}
                             </form>
                         @endguest
+                        <a href="/fnord" class="text-sm p-3">ADMIN</a>
                     </div>
                 </div>
             </div>

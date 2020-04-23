@@ -3,7 +3,8 @@
 namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 
 /**
  * Cot\Product
@@ -50,7 +51,7 @@ use Cot\Traits\HasUuid;
  */
 class Product extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -58,7 +59,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'manufacturer_id', 'vendor_id', 'name', 'description', 'height', 'width', 'depth', 'weight', 'volume', 'contents', 'price'
+        'uuid', 'manufacturer_id', 'vendor_id', 'name', 'description', 'height', 'width', 'depth', 'weight', 'volume', 'contents', 'price'
     ];
 
     /**
@@ -76,7 +77,7 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'name' => 'string',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'

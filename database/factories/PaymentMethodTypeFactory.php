@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(PaymentMethodType::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'name' => $faker->name(),
         'receiving_account' => $faker->sentence(),
         'active' => $faker->boolean()

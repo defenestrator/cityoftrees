@@ -36,7 +36,7 @@ class Coupon extends Model
      * @var array
      */
     protected $fillable = [
-        'percentage', 'value', 'code', 'expires'
+        'uuid', 'percentage', 'value', 'code', 'expires'
     ];
 
     /**

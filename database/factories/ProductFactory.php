@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'manufacturer_id' => random_int(1, 10),
         'vendor_id' => random_int(1, 10),
         'name' => $faker->name(),

@@ -2,8 +2,9 @@
 
 namespace Cot;
 
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
 
 /**
  * Cot\ShippingAddress
@@ -45,7 +46,7 @@ use Cot\Traits\HasUuid;
  */
 class ShippingAddress extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -53,7 +54,7 @@ class ShippingAddress extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'ship_to_name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code', 'lat', 'lng'
+        'uuid', 'user_id', 'ship_to_name', 'country', 'street_address', 'unit_number', 'city', 'state', 'postal_code', 'lat', 'lng'
     ];
 
     /**
@@ -71,7 +72,7 @@ class ShippingAddress extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'ship_to_name' => 'string',
         'country' => 'string',
         'street_address' => 'string',

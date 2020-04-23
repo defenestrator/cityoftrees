@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Manufacturer::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'name' => $faker->name(),
         'phone' => $faker->sentence(),
         'contact_email' => $faker->sentence(),

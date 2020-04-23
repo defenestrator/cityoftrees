@@ -3,7 +3,8 @@
 namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 
 /**
  * Cot\Invoice
@@ -39,7 +40,7 @@ use Cot\Traits\HasUuid;
  */
 class Invoice extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -47,7 +48,7 @@ class Invoice extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'subtotal', 'tax', 'shipping', 'discount', 'total'
+        'uuid', 'user_id', 'subtotal', 'tax', 'shipping', 'discount', 'total'
     ];
 
     /**
@@ -65,7 +66,7 @@ class Invoice extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];

@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Profile::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'user_id' => random_int(1, 10),
         'image_id' => random_int(1, 10),
         'screen_name' => $faker->sentence(),

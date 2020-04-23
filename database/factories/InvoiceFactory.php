@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Invoice::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'user_id' => random_int(1, 10),
         'subtotal' => random_int(0, 4294967295),
         'tax' => random_int(0, 4294967295),

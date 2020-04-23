@@ -2,10 +2,11 @@
 
 namespace Cot;
 
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Cot\Traits\HasUuid;
 
 /**
  * Cot\User
@@ -42,9 +43,9 @@ use Cot\Traits\HasUuid;
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\User whereUuid($value)
  * @mixin \Eloquent
  */
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, HasUuid;
+    use Notifiable, GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -52,7 +53,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'email', 'password'
+        'uuid', 'name', 'email', 'password'
     ];
 
     /**
@@ -70,8 +71,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'email' => 'string',
+        'name' => 'string',
         'email_verified_at' => 'datetime',
         'password' => 'string',
         'remember_token' => 'string',

@@ -16,7 +16,7 @@ use Laravel\Nova\TrashedStatus;
 
 class MorphTo extends Field implements RelatableField
 {
-    use ResolvesReverseRelation;
+    use ResolvesReverseRelation, DeterminesIfCreateRelationCanBeShown;
 
     /**
      * The field's component.
@@ -87,6 +87,13 @@ class MorphTo extends Field implements RelatableField
      * @var string
      */
     public $inverse;
+
+    /**
+     * Indicates whether the field should display the "With Trashed" option.
+     *
+     * @var bool
+     */
+    public $displaysWithTrashed = true;
 
     /**
      * Create a new field.
@@ -180,7 +187,7 @@ class MorphTo extends Field implements RelatableField
      */
     public function resolveForDisplay($resource, $attribute = null)
     {
-        //
+        $this->resolve($resource, $attribute);
     }
 
     /**
@@ -477,6 +484,18 @@ class MorphTo extends Field implements RelatableField
     }
 
     /**
+     * hides the "With Trashed" option.
+     *
+     * @return $this
+     */
+    public function withoutTrashed()
+    {
+        $this->displaysWithTrashed = false;
+
+        return $this;
+    }
+
+    /**
      * Prepare the field for JSON serialization.
      *
      * @return array
@@ -494,6 +513,8 @@ class MorphTo extends Field implements RelatableField
             'resourceName' => $this->resourceName,
             'reverse' => $this->isReverseRelation(app(NovaRequest::class)),
             'searchable' => $this->searchable,
+            'showCreateRelationButton' => $this->createRelationShouldBeShown(app(NovaRequest::class)),
+            'displaysWithTrashed' => $this->displaysWithTrashed,
         ], parent::jsonSerialize());
     }
 }

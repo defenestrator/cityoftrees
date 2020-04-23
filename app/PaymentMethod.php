@@ -3,7 +3,8 @@
 namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 
 /**
  * Cot\PaymentMethod
@@ -40,7 +41,7 @@ use Cot\Traits\HasUuid;
  */
 class PaymentMethod extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -66,7 +67,7 @@ class PaymentMethod extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'nickname' => 'string',
         'account' => 'string',
         'expires' => 'datetime',

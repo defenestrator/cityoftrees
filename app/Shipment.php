@@ -2,8 +2,9 @@
 
 namespace Cot;
 
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
 
 /**
  * Cot\Shipment
@@ -30,7 +31,7 @@ use Cot\Traits\HasUuid;
  */
 class Shipment extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -38,7 +39,7 @@ class Shipment extends Model
      * @var array
      */
     protected $fillable = [
-        'shipping_method_id', 'shipped_on_date', 'received_on_date'
+        'uuid', 'shipping_method_id', 'shipped_on_date', 'received_on_date'
     ];
 
     /**
@@ -56,7 +57,7 @@ class Shipment extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'shipped_on_date' => 'timestamp',
         'received_on_date' => 'timestamp',
         'created_at' => 'datetime',

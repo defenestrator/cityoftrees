@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Order::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'invoice_id' => random_int(1, 10)
     ];
 });

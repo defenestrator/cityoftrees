@@ -19,7 +19,6 @@ use Carbon\Carbon;
 
 $factory->define(Subscription::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
         'shipping_address_id' => random_int(1, 10),
         'frequency' => $faker->sentence(),
         'active' => $faker->boolean()

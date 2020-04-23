@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Image::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->sentence(),
+        'uuid' => $faker->uuid(),
         'imageable_id' => random_int(0, 9223372036854775807),
         'imageable_type' => $faker->sentence(),
         'large' => $faker->sentence(),

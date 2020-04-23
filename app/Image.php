@@ -3,7 +3,8 @@
 namespace Cot;
 
 use Illuminate\Database\Eloquent\Model;
-use Cot\Traits\HasUuid;
+use Dyrynda\Database\Casts\EfficientUuid;
+use Dyrynda\Database\Support\GeneratesUuid;
 
 /**
  * Cot\Image
@@ -37,7 +38,7 @@ use Cot\Traits\HasUuid;
  */
 class Image extends Model
 {
-    use HasUuid;
+    use GeneratesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -45,7 +46,7 @@ class Image extends Model
      * @var array
      */
     protected $fillable = [
-        'imageable_id', 'imageable_type', 'large', 'medium', 'small', 'square', 'original'
+        'uuid', 'imageable_id', 'imageable_type', 'large', 'medium', 'small', 'square', 'original'
     ];
 
     /**
@@ -63,7 +64,7 @@ class Image extends Model
      * @var array
      */
     protected $casts = [
-        'uuid' => 'string',
+        'uuid' => EfficientUuid::class,
         'imageable_type' => 'string',
         'large' => 'string',
         'medium' => 'string',
