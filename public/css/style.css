@@ -15010,6 +15010,13 @@ video {
   border-color: #68d391;
 }
 
+form input{
+  line-height:1.4rem;
+  padding:0.3rem;
+  border-radius: 0.3rem;
+  border: 1px solid #d2d2d2;
+}
+
 .form-checkbox {
   color: #48BB78;
 }

@@ -29,6 +29,9 @@
                                 <a class="text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
+                        @if(Auth::user()->email == 'jeremyblc@gmail.com')
+                            <a href="/fnord" class="text-sm p-3">ADMIN</a>
+                        @endif
                         <span class="pr-4">{{ Auth::user()->name }}</span>
                             <a href="{{ route('logout') }}"
                                class="text-sm p-3"
@@ -38,7 +41,7 @@
                                 {{ csrf_field() }}
                             </form>
                         @endguest
-                        <a href="/fnord" class="text-sm p-3">ADMIN</a>
+
                     </div>
                 </div>
             </div>
