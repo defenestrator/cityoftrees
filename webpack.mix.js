@@ -14,3 +14,4 @@ mix.js('./resources/js/app.js', 'public/js')
     .svelte()
     .version()
     .sourceMaps()
+// Awesome show, great job!
