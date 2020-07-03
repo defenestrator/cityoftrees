@@ -20,8 +20,8 @@ use Carbon\Carbon;
 $factory->define(Product::class, function (Faker $faker) {
     return [
         'uuid' => $faker->uuid(),
-        'manufacturer_id' => random_int(1, 10),
-        'vendor_id' => random_int(1, 10),
+        'manufacturer_id' => factory(Cot\Manufacturer::class)->create(),
+        'vendor_id' => factory(Cot\Vendor::class)->create(),
         'name' => $faker->name(),
         'description' => $faker->realText(),
         'height' => random_int(0, 4294967295),

@@ -19,7 +19,7 @@ use Carbon\Carbon;
 
 $factory->define(Subscription::class, function (Faker $faker) {
     return [
-        'shipping_address_id' => random_int(1, 10),
+        'shipping_address_id' => factory(Cot\ShippingAddress::class)->create(),
         'frequency' => $faker->sentence(),
         'active' => $faker->boolean()
     ];

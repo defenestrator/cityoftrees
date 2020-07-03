@@ -20,7 +20,7 @@ use Carbon\Carbon;
 $factory->define(Image::class, function (Faker $faker) {
     return [
         'uuid' => $faker->uuid(),
-        'imageable_id' => $faker->numberBetween(1,2),
+        'imageable_id' => factory(Cot\Product::class)->create(),
         'imageable_type' => 'Cot\Product',
         'large' => $faker->sentence(),
         'medium' => $faker->sentence(),

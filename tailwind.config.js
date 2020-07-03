@@ -1,12 +1,20 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+    purge: {
+        content: [
+        './resources/**/*.html',
+        './resources/**/*.vue',
+        './resources/**/*.svelte',
+        './resources/**/*.php',
+        './resources/**/*.css',
+        ]
+    },
   theme: {
     extend: {
       fontFamily: {
         sans: ['Josefin Sans', ...defaultTheme.fontFamily.sans],
         serif: ['Playfair Display', ...defaultTheme.fontFamily.serif]
-
     },
 
       boxShadow: theme => ({
@@ -22,5 +30,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/custom-forms'),
+    require('tailwindcss'),
+    require('autoprefixer'),
   ]
 }

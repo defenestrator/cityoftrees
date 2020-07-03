@@ -249,7 +249,7 @@ class DestroyAllMigrations extends Migration
         Schema::create('shipments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->efficientUuid('uuid')->index()->unique();
-            $table->unsignedBigInteger('shipping_method_id');
+            $table->string('shipping_method');
             $table->timestamp('shipped_on_date')->nullable();
             $table->timestamp('received_on_date')->nullable();
             $table->timestamp('created_at')->nullable();
@@ -343,7 +343,7 @@ class DestroyAllMigrations extends Migration
     }
 
     protected $tables = [
-        // THE ORDER MATTERS DO NOT ALTER UNLESS YOU KNOW WHY
+        // THE ORDER MATTERS; DO NOT ALTER UNLESS YOU KNOW WHY
         'users',
         'password_resets',
         'roles',
