@@ -9,7 +9,6 @@
 .form-input:focus, .form-checkbox:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(104, 211, 145, 0.5);
-    /* border-color: #68d391; */
 }
 
 form input{

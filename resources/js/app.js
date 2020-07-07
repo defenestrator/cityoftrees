@@ -1,5 +1,5 @@
 import App from "./components/App.svelte";
-
+require("./bootstrap.js")
 
 const app = new App({
     props: {

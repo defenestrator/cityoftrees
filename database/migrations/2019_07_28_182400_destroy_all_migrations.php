@@ -95,7 +95,7 @@ class DestroyAllMigrations extends Migration
         Schema::create('vendors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->efficientUuid('uuid')->index()->unique();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('phone')->nullable();
