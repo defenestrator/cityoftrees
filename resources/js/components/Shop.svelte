@@ -9,6 +9,7 @@ import { onMount } from "svelte";
 </svelte:head>
 <main>
 	<div class="flex-container content-start p-4 m-4">
+    {#if products.length >= 1}
         <div class="rounded shadow content-center p-3 m-2">
             <div class="text-center m-3 p-2">
                     <div class="container text-center">
@@ -17,5 +18,6 @@ import { onMount } from "svelte";
                 <Products />
             </div>
         </div>
+    {/if}
 	</div>
 </main>

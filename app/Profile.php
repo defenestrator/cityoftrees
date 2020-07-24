@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $uuid
  * @property int $user_id
- * @property int $image_id
  * @property string|null $screen_name
  * @property string|null $title
  * @property string|null $first_name
@@ -38,7 +37,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereFirstName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereFour20mag($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereImageId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereInstagram($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereLastName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Profile whereLeafly($value)
@@ -65,14 +63,14 @@ class Profile extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid', 'user_id', 'image_id', 'screen_name', 'title', 'first_name', 'last_name', 'phone', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
+        'uuid', 'user_id', 'screen_name', 'title', 'first_name', 'last_name', 'phone', 'facebook', 'instagram', 'twitter', 'snapchat', 'thcfarmer', 'rollitup', 'four20mag', 'leafly', 'strainly'
     ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
-     */
+    */
     protected $hidden = [
         'id'
     ];
@@ -81,7 +79,7 @@ class Profile extends Model
      * The attributes that should be cast to native types.
      *
      * @var array
-     */
+    */
     protected $casts = [
         'uuid' => EfficientUuid::class,
         'screen_name' => 'string',
@@ -103,11 +101,18 @@ class Profile extends Model
     ];
 
     /**
-     * Get the User for the Profile.
-     */
+    *  User for the Profile.
+    */
     public function user()
     {
         return $this->belongsTo(\Cot\User::class);
     }
 
+    /**
+    *  User's current profile image.
+    */
+    public function image()
+    {
+        return $this->morphOne(\Cot\Image::class, 'imageable');
+    }
 }

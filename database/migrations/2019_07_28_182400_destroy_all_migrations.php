@@ -8,13 +8,13 @@ class DestroyAllMigrations extends Migration
 {
     /**
      * Run the migrations.
-     * THE ORDER MATTERS DO NOT ALTER UNLESS YOU KNOW WHY
      *
      * @return void
-     */
+    */
     public function up()
     {
-        // THE ORDER MATTERS DO NOT ALTER UNLESS YOU KNOW WHY
+        // The order of the table declarations is significant.
+        // Don't change it unless you know what that means.
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->efficientUuid('uuid')->index()->unique();
@@ -117,8 +117,6 @@ class DestroyAllMigrations extends Migration
             $table->efficientUuid('uuid')->index()->unique();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('image_id');
-            $table->foreign('image_id')->references('id')->on('images');
             $table->string('screen_name')->nullable();
             $table->string('title')->nullable();
             $table->string('first_name')->nullable();
