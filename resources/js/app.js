@@ -1,13 +1,10 @@
-import App from "./components/App.svelte";
+import Shop from "./components/Shop.svelte";
+
 require("./bootstrap.js")
 
-const app = new App({
-    props: {
-
-    },
-    target: document.getElementById('dashboard')
+const shop = new Shop({
+    target: document.getElementById('shop')
 });
 
-window.app = app;
+window.shop = shop
 
-export default app;

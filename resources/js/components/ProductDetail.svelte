@@ -2,11 +2,11 @@
 
 </script>
 
-<template>
+<main>
 <div>
     Product Detail Page
 </div>
-</template>
+</main>
 
 <style>
 
