@@ -24,12 +24,12 @@ $factory->define(Product::class, function (Faker $faker) {
         'vendor_id' => factory(Cot\Vendor::class)->create(),
         'name' => $faker->name(),
         'description' => $faker->realText(),
-        'height' => random_int(0, 4294967295),
-        'width' => random_int(0, 4294967295),
-        'depth' => random_int(0, 4294967295),
-        'weight' => random_int(0, 4294967295),
-        'volume' => random_int(0, 4294967295),
-        'contents' => random_int(0, 4294967295),
-        'price' => random_int(0, 4294967295)
+        'height' => random_int(0, 200),
+        'width' => random_int(0, 200),
+        'depth' => random_int(0, 200),
+        'weight' => random_int(0, 200),
+        'volume' => random_int(0, 200),
+        'contents' => random_int(0, 200),
+        'price' => random_int(0, 200)
     ];
 });

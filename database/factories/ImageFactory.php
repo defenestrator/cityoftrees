@@ -22,10 +22,10 @@ $factory->define(Image::class, function (Faker $faker) {
         'uuid' => $faker->uuid(),
         'imageable_id' => factory(Cot\Product::class)->create(),
         'imageable_type' => 'Cot\Product',
-        'large' => $faker->sentence(),
-        'medium' => $faker->sentence(),
-        'small' => $faker->sentence(),
-        'square' => $faker->sentence(),
-        'original' => $faker->sentence()
+        'large' => "https://picsum.photos/1280/720",
+        'medium' => "https://picsum.photos/640/480",
+        'small' => "https://picsum.photos/320/240",
+        'square' => "https://picsum.photos/300/300",
+        'original' => "https://picsum.photos/2560/1440",
     ];
 });

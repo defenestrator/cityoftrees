@@ -22,7 +22,7 @@ form input{
 }
 html,
 body {
-    background: white;
+    background: #e0efe0;
     color: #353939;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
@@ -57,7 +57,7 @@ h3 {
 
 .forest {
     width:100%;
-    background: transparent url('/img/forest-honeydew.png') no-repeat top right;
+    background: white url('/img/forest-honeydew.png') no-repeat top right;
     background-size: cover;
 }
 
@@ -84,33 +84,18 @@ h3 {
 }
 
 .title {
-    font-size: 64px;
+    font-size: 3rem;
     font-family: 'Playfair Display', serif;
     color: #353839;
     font-weight: 900;
 }
 
-.m-b-md {
-    margin: 30px 0;
-}
 
-.fixed-bottom {
-    position: fixed;
-    bottom: 0px;
-    background: black;
-    color:white;
-}
 
-.nav-links>a {
-    color: #353839;
-    padding: 12.5px;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 2em;
-    letter-spacing: .1rem;
+.nav-links > a {
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 400;
+    padding-left:0.5rem;
 }
 
 

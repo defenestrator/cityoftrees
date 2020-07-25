@@ -1,33 +1,29 @@
 <?php
-
 namespace Cot\Nova;
 
-use Laravel\Nova\Fields\ID;
+use Cot\Nova\Profile;
+use Cot\Nova\Product;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Password;
-use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\MorphTo;
 
-use Laravel\Nova\Fields\PasswordConfirmation;
-
-class User extends Resource
+class Image extends Resource
 {
-
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'Cot\User';
+    public static $model = \Cot\Image::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'email';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -35,7 +31,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'email'
+        'id',
     ];
 
     /**
@@ -48,26 +44,16 @@ class User extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Uuid')->sortable()->creationRules('unique:users,uuid')->exceptOnForms()->hideWhenCreating(),
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
-
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
-
-            PasswordConfirmation::make('Password Confirmation')
-                ->onlyOnForms(),
-
-            HasOne::make('Profile'),
-
-            HasMany::make('Shipping Addresses', 'shippingAddresses', ShippingAddress::class),
-
-            BelongsToMany::make('Roles')
+            Text::make('Uuid')->sortable()->creationRules('unique:images,uuid')->exceptOnForms()->hideWhenCreating(),
+            MorphTo::make('Imageable')->types([
+                Profile::class,
+                Product::class,
+            ])->nullable(),
+            Text::make('Original'),
+            Text::make('Square')->onlyOnForms(),
+            Text::make('Small')->onlyOnForms(),
+            Text::make('Medium')->onlyOnForms(),
+            Text::make('Large')->onlyOnForms(),
         ];
     }
 

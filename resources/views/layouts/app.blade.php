@@ -12,29 +12,27 @@
     <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
 </head>
-<body class="forest bg-gray-100 h-screen antialiased leading-none">
-    <div id="app" class="mask full-height h-screen">
-        <nav class="mb-8 py-6">
-            <div class="container mx-auto px-6 md:px-0">
+<body class="antialiased leading-none">
+    <div id="app" class="forest full-height h-screen">
+        <nav class="py-6 px-2">
+            <div class="container mx-auto px-2 md:px-1">
                 <div class="flex items-center justify-center text-gray-800">
-                    <div class="mr-6">
+                    <div class="">
                         <a href="{{ url('/') }}" class="text-lg font-serif font-black">
                             {{ config('app.name', 'City of Trees') }}
                         </a>
                     </div>
-                    <div class="flex-1 text-right nav-links">
+                    <div class="flex-1 text-right nav-links text-sm mx-1">
                         @guest
-                            <a class="text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
-                                <a class="text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         @else
                         @if(Auth::user()->email == 'jeremyblc@gmail.com')
-                            <a href="/fnord" class="text-sm p-3">ADMIN</a>
+                            <a href="/admin">NOVA</a>
                         @endif
-                        <span class="pr-4">{{ Auth::user()->name }}</span>
                             <a href="{{ route('logout') }}"
-                               class="text-sm p-3"
                                onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">

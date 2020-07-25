@@ -5,17 +5,17 @@ namespace Cot\Http\Controllers;
 use Cot\Product;
 use Cot\Http\Resources\ProductCollection;
 use Cot\Http\Resources\ProductResource;
- 
+
 class ProductAPIController extends Controller
 {
     public function index()
     {
-        return new ProductCollection(Product::paginate());
+        return new ProductCollection(Product::with('images')->paginate());
     }
- 
+
     public function show(Product $product)
     {
-        return new ProductResource($product->load(['manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
+        return new ProductResource($product->load(['image','manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
     }
 
     public function store(Request $request)

@@ -1,7 +1,9 @@
 <script>
+
+data = fetch('/products')
 export const products = {
     props: {
-        products: products
+        products: data.data
     }
 }
 </script>

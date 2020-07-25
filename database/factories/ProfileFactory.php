@@ -21,7 +21,6 @@ $factory->define(Profile::class, function (Faker $faker) {
     return [
         'uuid' => $faker->uuid(),
         'user_id' => factory(Cot\User::class)->create(),
-        'image_id' => factory(Cot\Image::class)->create(),
         'screen_name' => $faker->sentence(),
         'title' => $faker->words(3, true),
         'first_name' => $faker->firstName,

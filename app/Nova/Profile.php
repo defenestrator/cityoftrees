@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 
@@ -16,14 +17,14 @@ class Profile extends Resource
      *
      * @var string
      */
-    public static $model = 'Cot\Profile';
+    public static $model = \Cot\Profile::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'screen_name';
 
     /**
      * The columns that should be searched.
@@ -44,8 +45,9 @@ class Profile extends Resource
     {
         return [
             ID::make()->sortable(),
-
+            Text::make('Uuid')->sortable()->creationRules('unique:profiles,uuid')->exceptOnForms()->hideWhenCreating(),
             BelongsTo::make('User'),
+            MorphOne::make('Image'),
             Text::make('Screen Name')
                 ->sortable()
                 ->rules('max:245'),

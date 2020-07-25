@@ -8,7 +8,8 @@ module.exports = {
         './resources/**/*.svelte',
         './resources/**/*.php',
         './resources/**/*.css',
-        ]
+        ],
+        enabled: true
     },
   theme: {
     extend: {
