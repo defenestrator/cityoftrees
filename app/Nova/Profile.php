@@ -46,62 +46,32 @@ class Profile extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-            Text::make('Uuid')->sortable()->creationRules('unique:profiles,uuid')->exceptOnForms()->hideWhenCreating()->hideFromIndex(),
+            ID::make(),
+            Text::make('Uuid')->creationRules('unique:profiles,uuid')->exceptOnForms()->hideWhenCreating()->hideFromIndex(),
             BelongsTo::make('User'),
             Avatar::make('Avatar')->maxWidth(400),
             Text::make('Screen Name')
-                ->sortable()
-                ->rules('max:245'),
+                ->rules('max:254'),
+
+            Boolean::make('public'),
 
             Text::make('First Name')
-                ->sortable()
                 ->rules('max:254'),
 
             Text::make('Last Name')
-                ->sortable()
                 ->rules('max:254'),
 
             Text::make('Facebook')
-                ->sortable()
                 ->rules('max:254')
                 ->hideFromIndex(),
 
             Text::make('Instagram')
-                ->sortable()
                 ->rules('max:254')
                 ->hideFromIndex(),
 
             Number::make('Phone')
-                ->sortable()
                 ->rules('max:254')
                 ->hideFromIndex(),
-
-            Text::make('Rollitup')
-                ->sortable()
-                ->rules('max:254')
-                ->hideFromIndex(),
-
-            Text::make('THC Farmer', 'thcfarmer')
-                ->sortable()
-                ->rules('max:254')
-                ->hideFromIndex(),
-
-            Text::make('420 Mag', 'four20mag')
-                ->sortable()
-                ->rules('max:254')
-                ->hideFromIndex(),
-
-            Text::make('Strainly')
-                ->sortable()
-                ->rules('max:254')
-                ->hideFromIndex(),
-
-            Text::make('Leafly')
-                ->sortable()
-                ->rules('max:254')
-                ->hideFromIndex(),
-
         ];
     }
 
