@@ -154,12 +154,13 @@ class DestroyAllMigrations extends Migration
             $table->foreign('vendor_id')->references('id')->on('vendors');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->unsignedInteger('stock');
             $table->unsignedInteger('height')->nullable();
             $table->unsignedInteger('width')->nullable();
             $table->unsignedInteger('depth')->nullable();
             $table->unsignedInteger('weight')->nullable();
             $table->unsignedInteger('volume')->nullable();
-            $table->unsignedInteger('contents')->nullable();
+            $table->text('contents')->nullable();
             $table->unsignedInteger('price');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

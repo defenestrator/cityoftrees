@@ -41,6 +41,7 @@ use Dyrynda\Database\Support\GeneratesUuid;
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereManufacturerId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereUuid($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Cot\Product whereVendorId($value)
@@ -59,7 +60,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid', 'manufacturer_id', 'vendor_id', 'name', 'description', 'height', 'width', 'depth', 'weight', 'volume', 'contents', 'price'
+        'uuid', 'manufacturer_id', 'vendor_id', 'name', 'description', 'stock', 'height', 'width', 'depth', 'weight', 'volume', 'contents', 'price'
     ];
 
     /**

@@ -1,12 +1,14 @@
+import Shop from "./components/Shop.svelte";
+import ProductDetail from "./components/ProductDetail.svelte"
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+// window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 /**
@@ -25,3 +27,30 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+const shop = new Shop({
+    target: document.getElementById('shop')
+});
+
+
+let uuid = null
+function getUuid() {
+    const pageURL = window.location.href;
+    const lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+    const test = '[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
+    if (lastURLSegment.match(test)) {
+        uuid = lastURLSegment
+    }
+    return uuid
+}
+
+if (!!document.getElementById('product')) {
+    const productDetail = new ProductDetail({
+        target: document.getElementById('product')
+    })
+    window.product = productDetail
+}
+console.log('Current Uuid is: ' + getUuid())
+window.shop = shop
+
+

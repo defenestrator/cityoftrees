@@ -13,9 +13,10 @@ class ProductAPIController extends Controller
         return new ProductCollection(Product::with('images')->paginate());
     }
 
-    public function show(Product $product)
+    public function show($uuid)
     {
-        return new ProductResource($product->load(['image','manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
+        $product = Product::whereUuid($uuid)->with(['images', 'manufacturer'])->first();
+        return $product;
     }
 
     public function store(Request $request)

@@ -3,13 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
+    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'City of Trees') }}</title>
-
-    <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased leading-none">
@@ -30,7 +27,7 @@
                             @endif
                         @else
                         @if(Auth::user()->email == 'jeremyblc@gmail.com')
-                            <a href="/admin">NOVA</a>
+                            <a href="/admin">Admin</a>
                         @endif
                             <a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -44,9 +41,11 @@
                 </div>
             </div>
         </nav>
+        @isset($messages)
+        @include('partials.flash.message')
+        @endif
         @yield('content')
     </div>
-
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

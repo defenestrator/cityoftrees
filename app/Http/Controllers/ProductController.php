@@ -16,13 +16,16 @@ class ProductController extends BaseController
 
     public function index()
     {
-        $products = Product::with(['images'])->paginate(40);
+        $products = Product::with(['images'])->paginate(29);
         return $products;
     }
 
-    public function show(Product $product)
+    public function show($uuid)
     {
-        return new ProductResource($product->load(['manufacturer', 'vendor', 'subscriptions', 'carts', 'invoices']));
+        $product = Product::whereUuid($uuid)
+                    ->with(['images'])
+                    ->first();
+        return view('products.show', compact('product'));
     }
 
     public function store(Request $request)

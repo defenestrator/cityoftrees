@@ -1,31 +1,10 @@
 @extends('layouts.app')
 
-@section('title')
-
-@parent
-@stop
-
-@section('page_styles')
-    <style>
-    </style>
-@stop
-
-@section('top')
-@stop
-
 @section('content')
-@auth
-<product-detail :product="{{ $product }}" :initial_user="'{{ Auth::user()->uuid }}'"> </product-detail>
-@endauth
+<script>
+   let productData = {!! $product !!}
+</script>
 
-@guest
-<product-detail :product="{{ $product }}" :initial_user="'0'"> </product-detail>
-@endguest
-@stop
+<ProductDetail id="product" />
+@endsection
 
-@section('bottom')
-@stop
-
-@section('page_scripts')
-
-@stop
