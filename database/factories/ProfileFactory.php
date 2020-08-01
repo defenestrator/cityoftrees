@@ -25,6 +25,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'title' => $faker->words(3, true),
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
+        'avatar' => "https://picsum.photos/400/400",
         'phone' => $faker->sentence(),
         'facebook' => $faker->sentence(),
         'instagram' => $faker->sentence(),

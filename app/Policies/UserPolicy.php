@@ -25,9 +25,6 @@ class UserPolicy
     **/
     public function update(User $user)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
         return Auth::user()->id == $user->id;
     }
 
@@ -37,9 +34,6 @@ class UserPolicy
     **/
     public function create(User $user)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
         return Auth::user()->id == $user->id;
     }
 
@@ -49,9 +43,6 @@ class UserPolicy
     **/
     public function delete(User $user)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
         return Auth::user()->id == $user->id;
     }
 }

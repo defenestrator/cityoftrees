@@ -117,6 +117,8 @@ class DestroyAllMigrations extends Migration
             $table->efficientUuid('uuid')->index()->unique();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('avatar')->nullable();
+            $table->boolean('public')->default(false);
             $table->string('screen_name')->nullable();
             $table->string('title')->nullable();
             $table->string('first_name')->nullable();

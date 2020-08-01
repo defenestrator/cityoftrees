@@ -17,9 +17,19 @@ class ProfilePolicy
      */
     public function __construct()
     {
-        //
+       //
     }
 
+    public function view(User $user, Profile $profile)
+    {
+        if ($profile->public == true) {
+            return true;
+        }
+        $profile = Profile::where('user_id', '=', $user->id)->first();
+
+        return $user->id == $profile->user_id;
+
+    }
     /**
     * Only Administrators and profile owner.
     *
@@ -27,9 +37,6 @@ class ProfilePolicy
     **/
     public function update(User $user, Profile $profile)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
         return $user->id == $profile->user_id;
     }
 
@@ -40,14 +47,8 @@ class ProfilePolicy
     **/
     public function create(User $user)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
-
         $profile = Profile::where('user_id', '=', $user->id)->first();
-        if ( ! $profile->user_id == $user->id ){
-            return true;
-        }
+        return $profile->user_id == $user->id;
     }
 
     /**
@@ -57,9 +58,6 @@ class ProfilePolicy
     **/
     public function delete(User $user, Profile $profile)
     {
-        if ($user->email == "jeremyblc@gmail.com") {
-            return true;
-        }
         return $user->id == $profile->user_id;
     }
 }

@@ -8,6 +8,8 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\Image as NovaImage;
+use Laravel\Nova\Fields\Avatar;
 
 class Image extends Resource
 {
@@ -23,7 +25,7 @@ class Image extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'uuid';
 
     /**
      * The columns that should be searched.
@@ -46,14 +48,13 @@ class Image extends Resource
             ID::make()->sortable(),
             Text::make('Uuid')->sortable()->creationRules('unique:images,uuid')->exceptOnForms()->hideWhenCreating(),
             MorphTo::make('Imageable')->types([
-                Profile::class,
-                Product::class,
+                Product::class
             ])->nullable(),
-            Text::make('Original'),
-            Text::make('Square')->onlyOnForms(),
-            Text::make('Small')->onlyOnForms(),
-            Text::make('Medium')->onlyOnForms(),
-            Text::make('Large')->onlyOnForms(),
+            NovaImage::make('Original'),
+            Avatar::make('Square')->hideWhenCreating()->maxWidth(400),
+            NovaImage::make('Small')->maxWidth(320),
+            NovaImage::make('Medium')->maxWidth(640),
+            NovaImage::make('Large')->maxWidth(1280),
         ];
     }
 
@@ -88,6 +89,7 @@ class Image extends Resource
     public function lenses(Request $request)
     {
         return [];
+
     }
 
     /**

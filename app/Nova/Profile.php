@@ -2,6 +2,7 @@
 
 namespace Cot\Nova;
 
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -9,6 +10,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\MorphOne;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
+use Cot\Image;
 
 class Profile extends Resource
 {
@@ -45,9 +47,9 @@ class Profile extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Uuid')->sortable()->creationRules('unique:profiles,uuid')->exceptOnForms()->hideWhenCreating(),
+            Text::make('Uuid')->sortable()->creationRules('unique:profiles,uuid')->exceptOnForms()->hideWhenCreating()->hideFromIndex(),
             BelongsTo::make('User'),
-            MorphOne::make('Image'),
+            Avatar::make('Avatar')->maxWidth(400),
             Text::make('Screen Name')
                 ->sortable()
                 ->rules('max:245'),
@@ -62,35 +64,43 @@ class Profile extends Resource
 
             Text::make('Facebook')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('Instagram')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Number::make('Phone')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('Rollitup')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('THC Farmer', 'thcfarmer')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('420 Mag', 'four20mag')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('Strainly')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
             Text::make('Leafly')
                 ->sortable()
-                ->rules('max:254'),
+                ->rules('max:254')
+                ->hideFromIndex(),
 
         ];
     }

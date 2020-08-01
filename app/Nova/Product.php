@@ -5,6 +5,11 @@ namespace Cot\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\MorphMany;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Cot\Image;
 
 class Product extends Resource
 {
@@ -20,7 +25,7 @@ class Product extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -41,6 +46,17 @@ class Product extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Uuid')->sortable()->creationRules('unique:images,uuid')->exceptOnForms()->hideWhenCreating(),
+            Text::make('Name')->sortable(),
+            Text::make('Description')->hideFromIndex(),
+            Text::make('Contents')->hideFromIndex(),
+            Number::make('Height')->hideFromIndex(),
+            Number::make('Width')->hideFromIndex(),
+            Number::make('Weight')->hideFromIndex(),
+            Number::make('Volume')->hideFromIndex(),
+            Number::make('Price')->sortable(),
+            Number::make('Stock')->sortable(),
+            MorphMany::make('Images')->hideFromIndex()
         ];
     }
 
