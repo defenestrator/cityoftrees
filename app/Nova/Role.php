@@ -46,11 +46,7 @@ class Role extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Name')->sortable(),
-
-            BelongsToMany::make('Users')->fields(function() {
-                return [
-                ];
-            }),
+            BelongsToMany::make('Users'),
         ];
     }
 
