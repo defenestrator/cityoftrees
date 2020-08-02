@@ -40,7 +40,7 @@ function buyNow(uuid) {
                 {#if product.images.length >= 1}
                 <div class="m-0 p-0 w-auto">
                      <a href="/products/{product.uuid}">
-                        <img class="rounded w-auto" style="margin: 0 auto; max-width:300px; width:100%;" src="/storage/S{product.images[0].square}"alt="Image of {product.name}" title="Image of {product.name}" />
+                        <img class="rounded w-auto" style="margin: 0 auto; max-width:300px; width:100%;" src="{product.images[0].square}"alt="Image of {product.name}" title="Image of {product.name}" />
                     </a>
                 </div>
                 {/if}

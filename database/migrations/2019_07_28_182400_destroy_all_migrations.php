@@ -47,11 +47,11 @@ class DestroyAllMigrations extends Migration
             $table->efficientUuid('uuid')->index()->unique();
             $table->unsignedBigInteger('imageable_id')->nullable();
             $table->string('imageable_type')->nullable();
-            $table->string('large');
-            $table->string('medium');
-            $table->string('small');
-            $table->string('square');
-            $table->string('original');
+            $table->string('large')->default('/img/tree.png');
+            $table->string('medium')->default('/img/tree.png');
+            $table->string('small')->default('/img/tree.png');
+            $table->string('square')->default('/img/tree.png');
+            $table->string('original')->default('/img/tree.png');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
