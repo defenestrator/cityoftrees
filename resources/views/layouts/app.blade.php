@@ -17,7 +17,7 @@
     <div id="app" class="forest full-height h-screen">
         <nav class="py-6 px-2">
             <div class="container mx-auto px-2 md:px-1">
-                <div class="flex items-center justify-center text-gray-800">
+                <div class="flex row text-gray-800">
                     <div class="">
                         <a href="{{ url('/') }}" class="text-2xl font-serif font-black">
                             {{ config('app.name', 'City of Trees') }}

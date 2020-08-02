@@ -39,8 +39,8 @@ function buyNow(uuid) {
                 <div class="m-0 p-0 w-auto pb-2">
                      <a href="/products/{product.uuid}">
                         <img
-                            class="rounded w-auto"
-                            style="margin: 0 auto; max-width:300px; width:100%;"
+                            class="rounded mx-auto"
+                            style="max-width:300px; width:100%;"
                             src="{product.images[0].square}"alt="Image of {product.name}"
                             title="Image of {product.name}"
                         />

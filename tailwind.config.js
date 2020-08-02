@@ -5,8 +5,8 @@ module.exports = {
         content: [
         './resources/**/*.html',
         './resources/**/*.svelte',
-        './resources/views/*.php',
-        './resources/css/*.css',
+        './resources/**/*.php',
+        './resources/**/*.css',
         ],
         enabled: true
     },
