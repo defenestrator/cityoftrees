@@ -7,7 +7,7 @@ export let product = productData
     <div class="flex-1 px-6">
         {#if product.images.length >= 1}
         {#each product.images as image, index}
-            <img src="/{image.medium}" alt="{product.name}" style="width:100%; min-width:240px; max-width:640px;" class="pb-4 rounded-lg">
+            <img src="{image.medium}" alt="{product.name}" style="width:100%; min-width:240px; max-width:640px;" class="pb-4 rounded-lg">
         {/each}
         {/if}
     </div>
