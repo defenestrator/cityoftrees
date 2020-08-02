@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'City of Trees') }}</title>
+    <link rel="preload" href="/favicon.png" as="icon" type="image/x-icon">
     <link rel="preload" href="{{ mix('css/style.css') }}" as="style">
     <link rel="preload" href="{{ mix('js/app.js') }}" as="script">
+    <link rel="icon" type="image/png" sizes="100x100" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'City of Trees') }}</title>
+
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased leading-none">
@@ -21,7 +23,7 @@
                             {{ config('app.name', 'City of Trees') }}
                         </a>
                     </div>
-                    <div class="flex-1 text-right nav-links text-sm mx-1">
+                    <div class="flex-1 text-right nav-links text-sÍm mx-1">
                         @guest
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
