@@ -15,7 +15,7 @@
             <div class="container mx-auto px-2 md:px-1">
                 <div class="flex items-center justify-center text-gray-800">
                     <div class="">
-                        <a href="{{ url('/') }}" class="text-lg font-serif font-black">
+                        <a href="{{ url('/') }}" class="text-2xl font-serif font-black">
                             {{ config('app.name', 'City of Trees') }}
                         </a>
                     </div>

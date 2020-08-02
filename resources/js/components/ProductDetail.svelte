@@ -16,8 +16,8 @@ export let product = productData
         <p class="py-4">{product.description}</p>
         <p class="text-2xl">${product.price}</p>
         <div class="py-4 text-2xl">
-            <button class="btn btn-green" style="background-color:#6ac318;">BUY NOW</button>
-        </div>Í
+            <button class="btn btn-green btn-sm" style="background-color:#6ac318;">BUY NOW</button>
+        </div>
         <p class="py-2">In Stock: {product.stock}</p>
         <p class="py-2">Contents: {product.contents}</p>
         <p class="py-2">Weight: {product.weight} grams</p>
