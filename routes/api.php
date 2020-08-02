@@ -17,11 +17,11 @@ use Illuminate\Routing\Router;
 /*
 * Snippet for a quick route reference
 */
-Route::get('/', function (Router $router) {
-    return collect($router->getRoutes()->getRoutesByMethod()["GET"])->map(function($value, $key) {
-        return url($key);
-    })->values();
-});
+// Route::get('/', function (Router $router) {
+//     return collect($router->getRoutes()->getRoutesByMethod()["GET"])->map(function($value, $key) {
+//         return url($key);
+//     })->values();
+// });
 
 Route::resource('roles', 'RoleAPIController', [
     'only' => ['index', 'show', 'store', 'update', 'destroy']

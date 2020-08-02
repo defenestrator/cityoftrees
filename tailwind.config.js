@@ -4,10 +4,9 @@ module.exports = {
     purge: {
         content: [
         './resources/**/*.html',
-        './resources/**/*.vue',
         './resources/**/*.svelte',
-        './resources/**/*.php',
-        './resources/**/*.css',
+        './resources/views/*.php',
+        './resources/css/*.css',
         ],
         enabled: true
     },
