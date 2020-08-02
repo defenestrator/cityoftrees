@@ -24,9 +24,7 @@
 }
 
 .btn-green {
-  --bg-opacity: 1;
-  background-color: #38a169;
-  background-color: rgba(56, 161, 105, var(--bg-opacity));
+  background-color:#6ac318;
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
@@ -36,8 +34,33 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   border-radius: 0.25rem;
-  &:hover, &:focus { --bg-opacity: 1; background-color: #48bb78; background-color: rgba(72, 187, 120, var(--bg-opacity))
-  }
+}
+
+.btn-green:hover, btn-green:focus {
+  --bg-opacity: 1;
+  background-color: #2f855a;
+  background-color: rgba(47, 133, 90, var(--bg-opacity))
+}
+
+.btn-orange {
+  --bg-opacity: 1;
+  background-color: #dd6b20;
+  background-color: rgba(221, 107, 32, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  font-weight: 700;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-orange:hover, btn-orange:focus {
+  --bg-opacity: 1;
+  background-color: #c05621;
+  background-color: rgba(192, 86, 33, var(--bg-opacity))
 }
 
 .btn-spinner,
@@ -990,6 +1013,18 @@ video {
   background-color: rgba(254, 215, 215, var(--bg-opacity));
 }
 
+.bg-orange-600{
+  --bg-opacity: 1;
+  background-color: #dd6b20;
+  background-color: rgba(221, 107, 32, var(--bg-opacity));
+}
+
+.bg-orange-700{
+  --bg-opacity: 1;
+  background-color: #c05621;
+  background-color: rgba(192, 86, 33, var(--bg-opacity));
+}
+
 .bg-yellow-200{
   --bg-opacity: 1;
   background-color: #fefcbf;
@@ -1014,10 +1049,10 @@ video {
   background-color: rgba(72, 187, 120, var(--bg-opacity));
 }
 
-.bg-green-600{
+.bg-green-700{
   --bg-opacity: 1;
-  background-color: #38a169;
-  background-color: rgba(56, 161, 105, var(--bg-opacity));
+  background-color: #2f855a;
+  background-color: rgba(47, 133, 90, var(--bg-opacity));
 }
 
 .bg-blue-500{
@@ -1404,10 +1439,6 @@ video {
   text-align: right;
 }
 
-.text-justify{
-  text-align: justify;
-}
-
 .text-white{
   --text-opacity: 1;
   color: #fff;
@@ -1593,8 +1624,14 @@ h3 {
   height: 25vh;
 }
 
-.mask {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.0) 50%, rgba(255, 255, 255, 0.9) 100%);
+.shop-description{
+  height:5rem;
+  overflow:hidden;
+  font-size:1.125rem;
+}
+
+.shop-description:after {
+  background: linear-gradient(rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 1));
 }
 
 .forest {

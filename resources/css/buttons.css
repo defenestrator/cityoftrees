@@ -5,9 +5,19 @@
   }
 
 .btn-green {
-    @apply bg-green-600 text-white font-bold py-3 px-6 rounded;
+    background-color:#6ac318;
+    @apply text-white font-bold py-3 px-6 rounded;
+}
 
-    &:hover, &:focus { @apply bg-green-500 }
+.btn-green:hover, btn-green:focus {
+    @apply bg-green-700
+}
+.btn-orange {
+    @apply bg-orange-600 text-white font-bold py-3 px-6 rounded;
+}
+
+.btn-orange:hover, btn-orange:focus {
+    @apply bg-orange-700
 }
 
 .btn-spinner,
