@@ -35,11 +35,7 @@ function buyNow(uuid) {
                         {product.name}
                     </a>
                 </div>
-                <hr class="p-2">
-                <div class="m-2 p-1 pb-4 text-2xl" style="letter-spacing:0.11rem; font-size:1.375rem;"> ${product.price}</div>
-                <div class="p-0 m-2 w-auto">
-                    <button on:click="{buyNow(product.uuid)}" class="btn btn-green" style="background-color:#6ac318;">&nbsp; &nbsp; BUY NOW &nbsp; &nbsp;</button>
-                </div>
+                <hr>
                 {#if product.images.length >= 1}
                 <div class="m-0 p-0 w-auto pb-2">
                      <a href="/products/{product.uuid}">
@@ -47,15 +43,19 @@ function buyNow(uuid) {
                     </a>
                 </div>
                 {/if}
-
-                <div class="my-6 w-auto text-justify" style="height:4rem; overflow:hidden; border-bottom:2px solid rgba(188, 188, 188, 0.6);">
-                    <p class="py-2" style="text-overflow: ellipsis;"><a href="/products/{product.uuid}">{product.description}</a></p>
+                <div class="py-2" style="letter-spacing:0.11rem; font-size:1.375rem;"> ${product.price}</div>
+                <div class="py-2 w-auto">
+                    <button on:click="{buyNow(product.uuid)}" class="btn btn-green" style="background-color:#6ac318;">&nbsp; &nbsp; BUY NOW &nbsp; &nbsp;</button>
                 </div>
-                <div class="p-0 my-4 w-auto">
+                <div class="py-4 w-auto text-justify" style="height:5rem; overflow:hidden; border-bottom:2px solid rgba(188, 188, 188, 0.6);">
+                    <p class="py-2" style="text-overflow: ellipsis; font-size:1.125rem;"><a href="/products/{product.uuid}">{product.description}</a></p>
+                </div>
+                <div class="py-4 w-auto">
                     <a href="/products/{product.uuid}">
                         <button class="btn btn-green text-white" style="background-color:#f6ad55;">LEARN MORE</button>
                     </a>
                 </div>
+
             </div>
         {/each}
         </div>
