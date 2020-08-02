@@ -3,10 +3,12 @@ export let product = productData
 </script>
 
 <main>
-<div class="flex flex-wrap content-start p-4 m-4">
+<div class="flex flex-wrap content-start p-4 m-4 bg-gray-100">
     <div class="flex-1 px-6">
         {#if product.images.length >= 1}
-            <img src="{product.images[0].medium}" alt="{product.name}" style="width:100%; min-width:300px;" class="pb-4 rounded">
+        {#each product.images as image, index}
+            <img src="/storage/{image.medium}" alt="{product.name}" style="width:100%; min-width:300px;" class="pb-4 rounded">
+        {/each}
         {/if}
     </div>
     <div class="flex-1 px-6">
