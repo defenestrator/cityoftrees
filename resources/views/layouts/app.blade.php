@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'City of Trees') }}</title>
+    <link rel="preload" href="{{ mix('css/style.css') }}" as="style">
+    <link rel="preload" href="{{ mix('js/app.js') }}" as="script">
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased leading-none">
